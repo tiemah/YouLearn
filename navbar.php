@@ -1,4 +1,7 @@
 <!-- Navbar Start -->
+<?php
+    require_once "styles.php";
+?>
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>YouLearn</h2>
