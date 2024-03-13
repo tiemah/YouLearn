@@ -33,10 +33,7 @@
 
 </head>
 <body>
-    <?php
-        require_once "navbar.php";
-        require_once "styles.php";
-    ?>
+    
        <div class="row mt-5">
         <div class="col-lg-4"></div>
 
@@ -59,10 +56,6 @@
         </form>
         </div>
     </div>
-    <?php
-        require_once "conn.php";
-        require_once "footer.php";
-        
-    ?>
+    
 </body>
 </html>
