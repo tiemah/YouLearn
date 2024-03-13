@@ -31,11 +31,7 @@
 
 </head>
 <body>
-    <?php 
-        require_once "navbar.php";
-        require_once "styles.php";
-    ?>
-    
+   
    
 
     
@@ -74,7 +70,7 @@
     </div>
 
     <?php
-    require_once "footer.php";
+
     require_once "conn.php"; //requiring the file containing the connection to the database
 
     if(isset($_POST['submit'])){
