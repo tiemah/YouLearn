@@ -33,6 +33,9 @@
 
 </head>
 <body>
+    <?php
+        require_once "navbar.php";
+    ?>
     
        <div class="row mt-5">
         <div class="col-lg-4"></div>
@@ -49,8 +52,8 @@
                 <label for="password" class="form-label text-dark mt-3">Password:</label>
                 <input type="password" name="password" class="form-control" placeholder="e.g 12234@ke" required>
 
-                <input type="submit" class="btn btn-info mt-5 " value="SUBMIT" name="submit" style="border-radius: 30px;">
-                <input type="submit" class="btn btn-info mt-5" value="RESET" style="margin-left: 300px; border-radius:30px;">
+                <input type="submit" class="btn btn-primary mt-5 " value="SUBMIT" name="submit" style="border-radius: 30px;">
+                <input type="submit" class="btn btn-primary mt-5" value="RESET" style="margin-left: 300px; border-radius:30px;">
 
                 <p class="text-dark my-5">Not registered? <a href="register.php">Register Today</a></p>    
         </form>
