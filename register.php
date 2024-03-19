@@ -58,6 +58,7 @@
     <?php
 
     require_once "conn.php"; //requiring the file containing the connection to the database
+    require_once "footer.php";
 
     if(isset($_POST['submit'])){
         // cleaning inputs usin the mysql_real_escape_string() that returns the escaped string thus preventing SQL injection attacks
