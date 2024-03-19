@@ -13,19 +13,19 @@
       require_once "styles.php";
     ?>
     
-    <div class="row mt-5">
-        <div class="col-lg-2 bg-primary mt-5">
+    <div class="row">
+        <div class="col-lg-2 bg-primary">
             <ul class="mt-3">
-            <a href="index.html" class="text-dark mx-5 mt-4"><i class="bi bi-house"></i>&nbsp;&nbsp;Home</a>
-                <li style="list-style: none;" class="text-dark mx-5 mt-4"><i class="bi bi-person"></i>&nbsp;&nbsp;Profile</li><hr>
-                <li style="list-style: none;" class="text-dark mx-5"><i class="bi bi-check-square"></i>&nbsp;&nbsp;Enrollment</li><hr>
-                <li style="list-style: none;" class="text-dark mx-5"><i class="bi bi-book"></i>&nbsp;&nbsp;View courses</li><hr>
+            <li style="list-style: none;" class="text-dark mx-5 mt-4"><i class="bi bi-house"></i>&nbsp;&nbsp;<a href="#" class="text-dark">Home</a></li><hr>
+                <li style="list-style: none;" class="text-dark mx-5 mt-4"><i class="bi bi-person"></i>&nbsp;&nbsp;<a href="#" class="text-dark">Profile</a></li><hr>
+                <li style="list-style: none;" class="text-dark mx-5"><i class="bi bi-check-square"></i>&nbsp;&nbsp;<a href="#" class="text-dark">Enrollment</a></li><hr>
+                <li style="list-style: none;" class="text-dark mx-5"><i class="bi bi-book"></i>&nbsp;&nbsp;<a href="#" class="text-dark">View Courses</a></li><hr>
                 <li style="list-style: none;" class="text-dark mx-5">My courses</li><hr>
                 <li style="list-style: none;" class="text-dark mx-5">My courses</li><hr>
                 <li style="list-style: none;" class="text-dark mx-5">My courses</li><hr>
             </ul>
         </div>
-        <div class="col-lg-10 mt-5">
+        <div class="col-lg-10">
             <table class="table table-hover">
                 <thead class="table-dark">
                   <tr>
