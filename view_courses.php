@@ -16,6 +16,7 @@
     <div class="row mt-5">
         <div class="col-lg-2 bg-primary mt-5">
             <ul class="mt-3">
+            <a href="index.html" class="text-dark mx-5 mt-4"><i class="bi bi-house"></i>&nbsp;&nbsp;Home</a>
                 <li style="list-style: none;" class="text-dark mx-5 mt-4"><i class="bi bi-person"></i>&nbsp;&nbsp;Profile</li><hr>
                 <li style="list-style: none;" class="text-dark mx-5"><i class="bi bi-check-square"></i>&nbsp;&nbsp;Enrollment</li><hr>
                 <li style="list-style: none;" class="text-dark mx-5"><i class="bi bi-book"></i>&nbsp;&nbsp;View courses</li><hr>
