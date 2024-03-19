@@ -45,8 +45,8 @@
         <label for="password" class="form-label text-dark mt-3">Password:</label>
         <input type="password" name="password" class="form-control" minlength="4" maxlength="12" required>
 
-        <input type="submit" class="btn btn-primary mt-5 " value="SUBMIT" name="submit" style="border-radius:30px;">
-        <input type="submit" class="btn btn-primary mt-5" value="RESET"  style="margin-left: 300px; border-radius:30px;">
+        <input type="submit" class="btn btn-primary mt-5 mx-5" value="SUBMIT" name="submit" style="border-radius:30px;">
+        <input type="submit" class="btn btn-primary mt-5 " value="RESET"  style="margin-left: 250px; border-radius:30px;">
 
         <p class="text-dark my-5">Already registered? <a href="login.php">Login </a></p>
 
