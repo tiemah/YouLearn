@@ -70,9 +70,11 @@
 
         $password_hash= password_hash($password, PASSWORD_DEFAULT); //hashes the password input bu the user using the PASSWORD_DEFAULT algorithm
 
+        // $sql = "INSERT INTO students(firstName, lastName, email, phone, password, user_role) VALUES(?,?,?,?,?, 'registered_user')";
         
 
-        $query = mysqli_query($conn, "INSERT INTO students(firstName, lastName, email, phone, password_hash) VALUES('$firstName', '$lastName', '$email', '$phone', '$password_hash')") or die(mysqli_error($conn));
+        $query = mysqli_query($conn, "INSERT INTO students(firstName, lastName, email, phone, password_hash, user_role) VALUES('$firstName', '$lastName', '$email', '$phone', '$password_hash','registered_user')") or die(mysqli_error($conn));
+        
 
         // setting the session messages
         if($query){
