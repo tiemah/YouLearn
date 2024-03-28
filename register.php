@@ -32,7 +32,7 @@ session_start();
         </div>
         <div class="col-lg-4 mt-5"style="margin-top:200px;">
         <h2 class="mt-5 text-center">REGISTER</h2>
-        <form action="" method="POST">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
 
         <label for="firstname" class="form-label text-dark">First Name:</label>
         <input type="text" name="first_name" class="form-control" pattern="[A-Za-z\s']+" title="Please enter letters only, numbers are not allowed!" required>
@@ -81,7 +81,7 @@ session_start();
 
         // setting the session messages
         if($query){
-            header("Location: login.php");
+            // header("Location: login.php");
                 // exit();
             ?>
             <!-- sweetalert link -->
@@ -92,7 +92,7 @@ session_start();
                 </script>
            
                 <?php
-                exit();
+                
                 
     }
 
