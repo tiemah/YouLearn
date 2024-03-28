@@ -23,7 +23,7 @@
                 </div><br>
                 <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label text-dark">Course Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" name="course-description" placeholder="e.g Laws of Software" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="course_description" placeholder="e.g Laws of Software" rows="3"></textarea>
                 </div>
                  <div class="buttons mx-5 mt-3">
                 <button class="btn btn-primary" name="course-btn" value="submit" style="border-radius: 20px;">Add</button>
