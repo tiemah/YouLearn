@@ -16,7 +16,7 @@
     <div class="row mt-0">
         <div class="col-lg-2 bg-primary mt-5">
             <ul class="mt-3">
-                <li style="list-style: none;" class="text-light mx-3 mt-4"><i class="bi bi-person"></i>&nbsp;&nbsp;Profile</li><br>
+                <li style="list-style: none;" class="text-light mx-3 mt-4"><i class="bi bi-person"></i>&nbsp;&nbsp;<a href="profile.php" class="text-light">Profile</a></li><br>
                 <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-check-square"></i>&nbsp;&nbsp;Course registration</li><br>
                 <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;&nbsp; View Courses</li><br>
                 <li style="list-style: none;" class="text-light mx-3">My courses</li><br>
