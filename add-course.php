@@ -15,7 +15,7 @@
 
         <div class="col-lg-4">
             <h2 class="mt-4 text-center">Add Course</h2>
-            <form action="" method="POST">
+            <form action="courseAdd.php" method="POST">
                 
                 <div class="mt-1">
                 <label for="exampleFormControlInput1" class="form-label text-dark">Course Name</label>
