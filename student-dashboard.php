@@ -1,16 +1,3 @@
-<?php
-// Start session if not already started
-session_start();
-
-// Check if user is logged in and has admin role
-if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'registered_user') {
-    // Redirect user to another page or display an access denied message
-    header("Location: login.php");
-    exit(); // Stop further execution
-}
-
-// Continue rendering the page content for admins
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
