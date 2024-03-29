@@ -32,7 +32,7 @@
             }elseif(!is_numeric($phone)){
                 echo "Only numbers are allowed in the email field!";
             }else{
-            $query=mysqli_query($conn,"UPDATE students SET firstName='$firstName',lastName='$lastName',email='$email', phone = $phone WHERE user_id='$user_id'")or die(mysqli_error($conn));
+            $query=mysqli_query($conn,"UPDATE students SET firstName='$firstName',lastName='$lastName',email='$email',phone = '$phone' WHERE user_id='$user_id'")or die(mysqli_error($conn));
     
             if($query){
                 ?>
