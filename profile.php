@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php
-        require_once "navbar.php";
+        require_once "navbar2.php";
         require_once "conn.php";
 
         $user_id =$_GET['user_id'];
