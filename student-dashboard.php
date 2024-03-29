@@ -16,15 +16,15 @@
     <div class="row mt-0">
         <div class="col-lg-2 bg-primary">
             <ul class="mt-3">
-                <li style="list-style: none;" class="text-light mx-3 mt-4 lead"><i class="bi bi-person"></i>&nbsp;&nbsp;<a href="profile.php" class="text-light">Profile</a></li><br>
-                <li style="list-style: none;" class="text-light mx-3 lead"><i class="bi bi-check-square"></i>&nbsp;&nbsp;Course enrollment</li><br>
-                <li style="list-style: none;" class="text-light mx-3 lead"><i class="bi bi-book"></i>&nbsp;&nbsp; View Courses</li><br>
-                <li style="list-style: none;" class="text-light mx-3 lead"><i class="bi bi-book"></i>&nbsp;&nbsp; Learning Materials</li><br>
+                <li style="list-style: none;" class="text-light mx-3 mt-4"><i class="bi bi-person"></i>&nbsp;<a href="profile.php" class="text-light">Profile</a></li><br>
+                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-check-square"></i>&nbsp;<a href="enrollment.php" class="text-light">Course enrollment</a></li><br>
+                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;View Courses</li><br>
+                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;Learning Materials</li><br>
                 
             </ul>
         </div>
-        <div class="col-lg-10 mt-1">
-            <h2 class="text-center mt-3">Offered Courses</h2>
+        <div class="col-lg-10">
+            <!-- <h2 class="text-center mt-3">Offered Courses</h2> -->
             <!--  display the course information here -->
             <!-- Service Start -->
     <div class="container-xxl py-5">
