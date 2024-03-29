@@ -3,25 +3,17 @@
 <head>
 
 <meta charset="utf-8">
-    <title>Register</title>
+    <title>Update profile</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-
-    
-
-    
-
 </head>
 <body>
     <?php
         require_once "navbar.php";
-    ?>
-   
-   
-
-    
-    <div class="row" >
+        
+    ?>     
+    <div class="row mb-5" >
         <div class="col-lg-4">
 
         </div>
