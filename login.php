@@ -26,7 +26,7 @@
             $row=mysqli_fetch_array($res);
 
             if(password_verify($password,$row['password_hash'])){
-                header("Location:index.php");
+                header("Location:student-dashboard.php");
             }else{
                 // $_SESSION['error_msg']='Invalid login credentials';
                 echo "invalid credentials";
