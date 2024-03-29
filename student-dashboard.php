@@ -14,17 +14,17 @@
     ?>
     
     <div class="row mt-0">
-        <div class="col-lg-2 bg-primary mt-5">
+        <div class="col-lg-2 bg-primary">
             <ul class="mt-3">
-                <li style="list-style: none;" class="text-light mx-3 mt-4"><i class="bi bi-person"></i>&nbsp;&nbsp;<a href="profile.php" class="text-light">Profile</a></li><br>
-                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-check-square"></i>&nbsp;&nbsp;Course registration</li><br>
-                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;&nbsp; View Courses</li><br>
-                <li style="list-style: none;" class="text-light mx-3">My courses</li><br>
-                <li style="list-style: none;" class="text-light mx-3">My courses</li><br>
-                <li style="list-style: none;" class="text-light mx-3">My courses</li><br>
+                <li style="list-style: none;" class="text-light mx-3 mt-4 lead"><i class="bi bi-person"></i>&nbsp;&nbsp;<a href="profile.php" class="text-light">Profile</a></li><br>
+                <li style="list-style: none;" class="text-light mx-3 lead"><i class="bi bi-check-square"></i>&nbsp;&nbsp;Course enrollment</li><br>
+                <li style="list-style: none;" class="text-light mx-3 lead"><i class="bi bi-book"></i>&nbsp;&nbsp; View Courses</li><br>
+                <li style="list-style: none;" class="text-light mx-3 lead"><i class="bi bi-book"></i>&nbsp;&nbsp; Learning Materials</li><br>
+                
             </ul>
         </div>
         <div class="col-lg-10 mt-1">
+            <h2 class="text-center mt-3">Offered Courses</h2>
             <!--  display the course information here -->
             <!-- Service Start -->
     <div class="container-xxl py-5">
@@ -34,7 +34,7 @@
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
-                            <h5 class="mb-3">Skilled Instructors</h5>
+                            <h5 class="mb-3">Software Law</h5>
                             <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
                             <button class="btn btn-success" style="border-radius: 20px;" name="course">Enroll</button>
                         </div>
@@ -44,7 +44,7 @@
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                            <h5 class="mb-3">Online Classes</h5>
+                            <h5 class="mb-3">HCI design</h5>
                             <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
                             <button class="btn btn-success" style="border-radius: 20px;" name="course">Enroll</button>
                         </div>
@@ -54,7 +54,7 @@
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-home text-primary mb-4"></i>
-                            <h5 class="mb-3">Home Projects</h5>
+                            <h5 class="mb-3">Neural Networks</h5>
                             <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
                             <button class="btn btn-success" style="border-radius: 20px;" name="course">Enroll</button>
                         </div>
@@ -64,7 +64,7 @@
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
-                            <h5 class="mb-3">Book Library</h5>
+                            <h5 class="mb-3">Modelling </h5>
                             <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
                             <button class="btn btn-success" style="border-radius: 20px;" name="course">Enroll</button>
                         </div>
@@ -75,14 +75,14 @@
     </div>
     <!-- Service End -->
     <!-- Service Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
-                            <h5 class="mb-3">Skilled Instructors</h5>
+                            <h5 class="mb-3">Simulation</h5>
                             <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
                             <button class="btn btn-success" style="border-radius: 20px;" name="course">Enroll</button>
                         </div>
@@ -92,7 +92,7 @@
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                            <h5 class="mb-3">Online Classes</h5>
+                            <h5 class="mb-3">OOP</h5>
                             <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
                             <button class="btn btn-success" style="border-radius: 20px;" name="course">Enroll</button>
                         </div>
@@ -102,7 +102,7 @@
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-home text-primary mb-4"></i>
-                            <h5 class="mb-3">Home Projects</h5>
+                            <h5 class="mb-3">Data Structures</h5>
                             <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
                             <button class="btn btn-success" style="border-radius: 20px;" name="course">Enroll</button>
                         </div>
@@ -112,7 +112,7 @@
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
-                            <h5 class="mb-3">Book Library</h5>
+                            <h5 class="mb-3">Basic Calculus</h5>
                             <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
                             <button class="btn btn-success" style="border-radius: 20px;" name="course">Enroll</button>
                         </div>
@@ -120,7 +120,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Service End -->
     
         </div>
