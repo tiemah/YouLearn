@@ -53,11 +53,20 @@
                 ?>
         
         
-    <div class="row mb-5" >
-        <div class="col-lg-4">
-
+    <!-- <div class="row mb-5" > -->
+    <div class="row mt-0">
+        <div class="col-lg-2 bg-primary mt-0">
+            <!-- Sidebar content -->
+            <ul class="mt-3">
+                <li style="list-style: none;" class="text-light mx-3 mt-4"><i class="bi bi-person"></i>&nbsp;<a href="profile.php" class="text-light">Profile</a></li><br>
+                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-check-square"></i>&nbsp;<a href="enrollment.php" class="text-light">Course enrollment</a></li><br>
+                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;View Courses</li><br>
+                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;Learning Materials</li><br>
+                
+            </ul>
         </div>
-        <div class="col-lg-4 mt-5"style="margin-top:200px;">
+            
+        <div class="col-lg-10 mt-3">
         <h2 class="mt-5 text-center">Update Profile</h2>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
 
@@ -87,5 +96,10 @@
     <?php
         require_once "footer.php";
     ?>
+
+       <!-- JavaScript Libraries -->
+       <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>
