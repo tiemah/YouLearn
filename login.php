@@ -12,7 +12,10 @@
 </head>
 <body>
 <?php
-    session_start();
+    // After the user successfully logs in
+    session_start(); // Start the session
+    $_SESSION['user_id'] = $user_id; // Store the user ID in the session variable
+
     require "conn.php";
     require_once "navbar.php";   
 
