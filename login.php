@@ -13,8 +13,17 @@
 <body>
 <?php
     // After the user successfully logs in
-    session_start(); // Start the session
-    $_SESSION['user_id'] = $user_id; // Store the user ID in the session variable
+    // session_start(); // Start the session
+    // $_SESSION['user_id'] = $user_id; // Store the user ID in the session variable
+    //If user is already logged in redirect to dashboard
+    // if(isset($_SESSION['user_id'])){
+    //     header("Location:student-dashboard.php");
+    // }
+    session_start();
+    
+    if(isset($_SESSION['login'])){
+        header("Location:student-dashboard.php");
+    }
 
     require "conn.php";
     require_once "navbar.php";   
@@ -29,10 +38,15 @@
             $row=mysqli_fetch_array($res);
 
             if(password_verify($password,$row['password_hash'])){
+                session_start();
+                $_SESSION['login'] = $email;
+
                 header("Location:student-dashboard.php");
             }else{
                 // $_SESSION['error_msg']='Invalid login credentials';
-                echo "invalid credentials";
+                session_start();
+                $_SESSION['login'] = '';
+                echo "invalid password";
             }
             }else{
             //   $_SESSION['error_msg']='Invalid login credentials';

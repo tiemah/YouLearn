@@ -10,11 +10,13 @@
 </head>
 <body>
     <?php
+    
         require_once "navbar2.php";
         require_once "conn.php";
-
-        $user_id =$_GET['user_id'];
-        $res = mysqli_query($conn, "SELECT * FROM students WHERE user_id ='$user_id'"); 
+        session_start(); 
+        $email = $_SESSION['login'];
+        
+        $res = mysqli_query($conn, "SELECT * FROM students WHERE email='$email'"); 
         $row = mysqli_fetch_array($res);
 
         if(isset($_POST['submit'])){
@@ -32,7 +34,7 @@
             }elseif(!is_numeric($phone)){
                 echo "Only numbers are allowed in the email field!";
             }else{
-            $query=mysqli_query($conn,"UPDATE students SET firstName='$firstName',lastName='$lastName',email='$email',phone = '$phone' WHERE user_id='$user_id'")or die(mysqli_error($conn));
+            $query=mysqli_query($conn,"UPDATE students SET firstName='$firstName',lastName='$lastName',email='$email',phone = '$phone' WHERE email='$email'")or die(mysqli_error($conn));
     
             if($query){
                 ?>

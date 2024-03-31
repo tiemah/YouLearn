@@ -45,6 +45,15 @@
                 </thead>
                 <tbody>
                   <?php
+                        session_start();
+    
+                        if(!isset($_SESSION['login'])){
+                            header("Location:login.php");
+                        }
+
+
+
+
                   if ($result && mysqli_num_rows($result) > 0) {
                       $count = 1;
                       // Loop through the fetched course data
@@ -57,8 +66,9 @@
                           echo '<td>';
                           // Form for enrolling into the course
                           echo '<form method="post" action="enroll.php">';
-                          echo '<input type="hidden" name="course_id" value="' . $row['course_id'] . '">';
-                          echo '<button type="button" class="btn btn-success" name="enroll" style="border-radius: 20px;">Enroll</button>';
+                          echo '<input type="hidden" name="course" value="' . $row['course_name'] . '">';
+                          echo '<input type="hidden" name="email" value="' . $_SESSION['login'] . '">';
+                          echo '<button type="submit" class="btn btn-success" name="enroll" style="border-radius: 20px;">Enroll</button>';
                           echo '</form>';
                           echo '</td>';
                           echo '<td><button type="button" class="btn btn-danger" name="discard" style="border-radius: 20px;">Discard</button></td>';

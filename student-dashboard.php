@@ -11,6 +11,13 @@
     <?php
       require_once "navbar2.php";
       require_once "styles.php";
+
+      session_start();
+    
+if(!isset($_SESSION['login'])){
+    header("Location:login.php");
+}
+
     ?>
     
     <div class="row mt-0">
