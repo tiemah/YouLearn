@@ -3,7 +3,9 @@ require "conn.php";
 
 if(isset($_POST['enroll'])){
     // Sanitize user input
+    $course_code = mysqli_real_escape_string($conn, $_POST['course_code']);
     $course = mysqli_real_escape_string($conn, $_POST['course']);
+    $course_description = mysqli_real_escape_string($conn, $_POST['course_description']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
 
     // Check if the user is already enrolled for the course
@@ -25,7 +27,7 @@ if(isset($_POST['enroll'])){
         <?php
     } else {
         // If the user is not already enrolled, proceed with enrollment
-        $query = mysqli_query($conn, "INSERT INTO enrollment (email, course) VALUES ('$email', '$course')");
+        $query = mysqli_query($conn, "INSERT INTO enrollment (course_code, course, course_description, email) VALUES ('$course_code', '$course', '$course_description', '$email')");
 
         // Check if the query was successful
         if($query){

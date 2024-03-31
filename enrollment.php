@@ -68,7 +68,9 @@
                           echo '<td>';
                           // Form for enrolling into the course
                           echo '<form method="post" action="enroll.php">';
+                          echo '<input type="hidden" name="course_code" value="' . $row['course_code'] . '">';
                           echo '<input type="hidden" name="course" value="' . $row['course_name'] . '">';
+                          echo '<input type="hidden" name="course_description" value="' . $row['course_description'] . '">';
                           echo '<input type="hidden" name="email" value="' . $_SESSION['login'] . '">';
                           echo '<button type="submit" class="btn btn-success" name="enroll" style="border-radius: 20px;">Enroll</button>';
                           echo '</form>';
