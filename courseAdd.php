@@ -1,6 +1,7 @@
 <?php
     require_once "conn.php";
     if(isset($_POST['course-btn'])){
+        $course_title = mysqli_real_escape_string($conn, $_POST['course_title']);
         $course_name = mysqli_real_escape_string($conn, $_POST['course_name']);
         $course_description = mysqli_real_escape_string($conn, $_POST['course_description']);    
 

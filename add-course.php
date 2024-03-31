@@ -18,9 +18,12 @@
             <form action="courseAdd.php" method="POST">
                 
                 <div class="mt-1">
+                <label for="exampleFormControlInput1" class="form-label text-dark">Course Title</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="course_title" placeholder="e.g COM 424"><br>
+                
                 <label for="exampleFormControlInput1" class="form-label text-dark">Course Name</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="course_name" placeholder="e.g Engineering and Software Law">
-                </div><br>
+                <br>
                 <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label text-dark">Course Description</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" name="course_description" placeholder="e.g Laws of Software" rows="3"></textarea>
