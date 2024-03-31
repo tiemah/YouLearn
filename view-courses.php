@@ -63,14 +63,14 @@
                           echo '<tr>';
                           echo '<th scope="row">' . $count++ . '</th>';
                           echo '<td>' . $row['course_code'] . '</td>';
-                          echo '<td>' . $row['course_name'] . '</td>';
+                          echo '<td>' . $row['course'] . '</td>';
                           echo '<td>' . $row['course_description'] . '</td>';
                           echo '<td>';
                           // Form for enrolling into the course
                           echo '<form method="post" action="enroll.php">';
                           echo '<input type="hidden" name="course" value="' . $row['course_name'] . '">';
                           echo '<input type="hidden" name="email" value="' . $_SESSION['login'] . '">';
-                          echo '<button type="submit" class="btn btn-success" name="enroll" style="border-radius: 20px;">Enroll</button>';
+                          echo '<button type="submit" class="btn btn-danger" name="discard" style="border-radius: 20px;">Drop</button>';
                           echo '</form>';
                           echo '</td>';
                         //   echo '<td><button type="button" class="btn btn-danger" name="discard" style="border-radius: 20px;">Discard</button></td>';
