@@ -11,20 +11,17 @@ $query = mysqli_query($conn, "INSERT INTO enrollment(email, course) VALUES('$ema
 }
 
 if($query){
-
-?>
-
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
-            
-            <script>
-                swal("Good job!", "Enrollment successful!", "success");
+    ?>
+                <!-- sweetalert link -->
+                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+                
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        swal("Good job!", "Enrolled successfully!", "success").then(() => {
+                            window.location.href = "enrollment.php"; // Redirect to add-course page after displaying sweet alert
+                        });
+                    });
                 </script>
-
-<?php
-                
-                
-            }
-        
- header("Location:enrollment.php");
-        
+    <?php
+}
             ?>
