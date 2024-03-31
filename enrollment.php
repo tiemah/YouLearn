@@ -9,6 +9,7 @@
 </head>
 <body>
     <?php
+        session_start();
         require_once "navbar2.php";
         require_once "styles.php";
         require_once "conn.php"; // Include the file containing database connection details
@@ -30,6 +31,7 @@
             </ul>
         </div>
         <div class="col-lg-10 mt-5">
+          <div class="table-responsive">
             <table class="table table-hover">
                 <thead class="table-dark">
                     <tr>
@@ -42,26 +44,34 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                    if ($result && mysqli_num_rows($result) > 0) {
-                        $count = 1;
-                        // Loop through the fetched course data
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            // Output table rows for each course
-                            echo '<tr>';
-                            echo '<th scope="row">' . $count++ . '</th>';
-                            echo '<td>' . $row['course_name'] . '</td>';
-                            echo '<td>' . $row['course_description'] . '</td>';
-                            echo '<td><button type="submit" class="btn btn-success" name="enroll" style="border-radius: 20px;">Enroll</button></td>';
-                            echo '<td><button type="submit" class="btn btn-danger" name="discard" style="border-radius: 20px;">Discard</button></td>';
-                            echo '</tr>';
-                        }
-                    } else {
-                        echo '<tr><td colspan="4">No courses found.</td></tr>'; // Displayed if no courses are available in the database
-                    }
-                    ?>
-                </tbody>
+                  <?php
+                  if ($result && mysqli_num_rows($result) > 0) {
+                      $count = 1;
+                      // Loop through the fetched course data
+                      while ($row = mysqli_fetch_assoc($result)) {
+                          // Output table rows for each course
+                          echo '<tr>';
+                          echo '<th scope="row">' . $count++ . '</th>';
+                          echo '<td>' . $row['course_name'] . '</td>';
+                          echo '<td>' . $row['course_description'] . '</td>';
+                          echo '<td>';
+                          // Form for enrolling into the course
+                          echo '<form method="post" action="enroll.php">';
+                          echo '<input type="hidden" name="course_id" value="' . $row['course_id'] . '">';
+                          echo '<button type="button" class="btn btn-success" name="enroll" style="border-radius: 20px;">Enroll</button>';
+                          echo '</form>';
+                          echo '</td>';
+                          echo '<td><button type="button" class="btn btn-danger" name="discard" style="border-radius: 20px;">Discard</button></td>';
+                          echo '</tr>';
+                      }
+                  } else {
+                      echo '<tr><td colspan="4">No courses found.</td></tr>'; // Displayed if no courses are available in the database
+                  }
+                  ?>
+</tbody>
+
             </table>
+          </div>
         </div>
     </div>
     <?php
