@@ -36,10 +36,11 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Course Code</th>
                         <th scope="col">Course Title</th>
                         <th scope="col">Course Description</th>
-                        <th scope="col">Enroll</th>
-                        <th scope="col">View</th>
+                        <th scope="col">Action</th>
+                        <!-- <th scope="col">View</th> -->
                         <!-- <th scope="col" colspan="2" class="text-center">Action</th> -->
                     </tr>
                 </thead>
@@ -61,6 +62,7 @@
                           // Output table rows for each course
                           echo '<tr>';
                           echo '<th scope="row">' . $count++ . '</th>';
+                          echo '<td>' . $row['course_code'] . '</td>';
                           echo '<td>' . $row['course_name'] . '</td>';
                           echo '<td>' . $row['course_description'] . '</td>';
                           echo '<td>';
@@ -71,7 +73,7 @@
                           echo '<button type="submit" class="btn btn-success" name="enroll" style="border-radius: 20px;">Enroll</button>';
                           echo '</form>';
                           echo '</td>';
-                          echo '<td><button type="button" class="btn btn-danger" name="discard" style="border-radius: 20px;">Discard</button></td>';
+                        //   echo '<td><button type="button" class="btn btn-danger" name="discard" style="border-radius: 20px;">Discard</button></td>';
                           echo '</tr>';
                       }
                   } else {
