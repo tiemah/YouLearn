@@ -60,9 +60,10 @@
         <div class="col-lg-2 bg-primary mt-0">
             <!-- Sidebar content -->
             <ul class="mt-3">
-                <li style="list-style: none;" class="text-light mx-3 mt-4"><i class="bi bi-person"></i>&nbsp;<a href="profile.php" class="text-light">Profile</a></li><br>
+                <li style="list-style: none;" class="text-light mx-3 mt-3"><i class="bi bi-house"></i>&nbsp;<a href="student-dashboard.php" class="text-light">Dashboard</li><br>
+                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-person"></i>&nbsp;<a href="profile.php" class="text-light">Profile</a></li><br>
                 <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-check-square"></i>&nbsp;<a href="enrollment.php" class="text-light">Course enrollment</a></li><br>
-                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;View Courses</li><br>
+                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;<a href="view-courses.php" class="text-light">View Courses</a></li><br>
                 <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;Learning Materials</li><br>
                 
             </ul>
