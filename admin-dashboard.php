@@ -5,7 +5,7 @@ session_start();
 // Check if user is logged in and has admin role
 if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'administrator') {
     // Redirect user to another page or display an access denied message
-    header("Location: access_denied.php");
+    header("Location: login.php");
     exit(); // Stop further execution
 }
 
