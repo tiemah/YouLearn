@@ -15,23 +15,26 @@
 
         <div class="col-lg-4">
             <h2 class="mt-4 text-center">Add Course</h2>
-            <form action="courseAdd.php" method="POST">
+            <form action="courseAdd.php" method="POST" enctype="multipart/form-data">
                 
                 <div class="mt-1">
-                <label for="exampleFormControlInput1" class="form-label text-dark">Course Title</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="course_title" placeholder="e.g COM 424"><br>
+                <label for="exampleFormControlInput1" class="form-label text-dark">Course Code</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="course_code" placeholder="e.g COM 424"><br>
                 
                 <label for="exampleFormControlInput1" class="form-label text-dark">Course Name</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="course_name" placeholder="e.g Engineering and Software Law">
+                <input type="text" class="form-control" id="exampleFormControlInput2" name="course_name" placeholder="e.g Engineering and Software Law">
                 <br>
                 <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label text-dark">Course Description</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" name="course_description" placeholder="e.g Laws of Software" rows="3"></textarea>
                 </div>
-                <input type="file" name="file" id="file">
+                <!-- Input field for uploading PDF file -->
+                <label for="pdfFile" class="text-dark">Upload File</label><br>
+                <input type="file" id="pdfFile" name="pdfFile"><br><br>
+
                  <div class="buttons mx-5 mt-3">
                 <button class="btn btn-primary" name="course-btn" value="submit" style="border-radius: 20px;">Add</button>
-                <button class="btn btn-primary" value="reset" style="border-radius: 20px; margin-left:130px;">Reset</button>
+                <!-- <button class="btn btn-primary" value="reset" style="border-radius: 20px; margin-left:130px;">Reset</button> -->
                  </div>
             </form>
         </div>
