@@ -15,6 +15,10 @@
         require_once "conn.php";
         session_start(); 
         $email = $_SESSION['login'];
+        if(!isset($_SESSION['login'])){
+            header("Location:login.php");
+        }
+        
         
         $res = mysqli_query($conn, "SELECT * FROM students WHERE email='$email'"); 
         $row = mysqli_fetch_array($res);

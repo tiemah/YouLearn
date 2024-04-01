@@ -10,6 +10,10 @@
 <body>
     <?php
         session_start();
+        if(!isset($_SESSION['login'])){
+            header("Location:login.php");
+        }
+        
         require_once "navbar2.php";
         require_once "styles.php";
         require_once "conn.php"; // Include the file containing database connection details
