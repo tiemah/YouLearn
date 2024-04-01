@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php
-        
+        session_start();
         require_once "navbar2.php";
         require_once "styles.php";
         require_once "conn.php"; // Include the file containing database connection details
@@ -46,7 +46,7 @@
                 </thead>
                 <tbody>
                   <?php
-                        session_start();
+                        // session_start();
     
                         if(!isset($_SESSION['login'])){
                             header("Location:login.php");
@@ -66,10 +66,10 @@
                           echo '<td>' . $row['course'] . '</td>';
                           echo '<td>' . $row['course_description'] . '</td>';
                           echo '<td>';
-                          // Form for enrolling into the course
+                          // Form for deleting the course
                           echo '<form method="post" action="drop.php">';
                           echo '<input type="hidden" name="course_code" value="' . $row['course_code'] . '">';
-                          echo '<input type="hidden" name="course" value="' . $row['course_name'] . '">';
+                          echo '<input type="hidden" name="course" value="' . $row['course'] . '">';
                           echo '<input type="hidden" name="course_description" value="' . $row['course_description'] . '">';
                           echo '<input type="hidden" name="email" value="' . $_SESSION['login'] . '">';
                           echo '<button type="submit" class="btn btn-danger" name="discard" style="border-radius: 20px;">Drop</button>';
