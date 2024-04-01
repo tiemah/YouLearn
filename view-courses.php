@@ -10,6 +10,7 @@
 <body>
     <?php
         session_start();
+        $email = $_SESSION['login'];
         if(!isset($_SESSION['login'])){
             header("Location:login.php");
         }
@@ -19,9 +20,18 @@
         require_once "conn.php"; // Include the file containing database connection details
 
         // Query to fetch course data from the database
-        $query = "SELECT * FROM enrollment";
+        $query = "SELECT * FROM enrollment WHERE email = '$email'";
         $result = mysqli_query($conn, $query);
-    ?>
+        
+    if ($result && mysqli_num_rows($result) > 0) {
+        // Loop through the fetched course data and display them
+        // ...
+    } else {
+        echo '<div class="alert alert-info" role="alert">You have not enrolled in any courses yet.</div>';
+    }
+?>
+
+    
     
     <div class="row mt-0">
         <div class="col-lg-2 bg-primary mt-5">
