@@ -84,25 +84,35 @@ if(isset($_SESSION['login'])){
         $query = mysqli_query($conn, "INSERT INTO students(firstName, lastName, email, phone, password_hash, user_role) VALUES('$firstName', '$lastName', '$email', '$phone', '$password_hash','registered_user')") or die(mysqli_error($conn));
         
 
-        // setting the session messages
+        // Check if the query was successful
         if($query){
-            // header("Location: login.php");
-                // exit();
             ?>
-            <!-- sweetalert link -->
+            <!-- SweetAlert link -->
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
-            
             <script>
-                swal("Good job!", "Registration successful!", "success");
-                </script>
-           
-                <?php
-                
-                
+                document.addEventListener('DOMContentLoaded', function() {
+                    swal("Hooray!", "Registered successfully!", "success").then(() => {
+                        window.location.href = "login.php"; // Redirect to login page after displaying success alert
+                    });
+                });
+            </script>
+            <?php
+        } else {
+            // Display error message if the query fails
+            ?>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    swal("Oops!", "Failed to register. Please try again later.", "error").then(() => {
+                        window.location.href = "register.php"; // Redirect to register page after displaying error alert
+                    });
+                });
+            </script>
+            <?php
+        }
     }
 
-    }
-
+?>
     ?>
 
     
