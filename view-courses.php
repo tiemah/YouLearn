@@ -54,8 +54,8 @@
                         <th scope="col">Course Code</th>
                         <th scope="col">Course Title</th>
                         <th scope="col">Course Description</th>
+                        <th scope="col">Materials</th>
                         <th scope="col">Action</th>
-                        <!-- <th scope="col">View</th> -->
                         <!-- <th scope="col" colspan="2" class="text-center">Action</th> -->
                     </tr>
                 </thead>
@@ -80,6 +80,7 @@
                           echo '<td>' . $row['course_code'] . '</td>';
                           echo '<td>' . $row['course'] . '</td>';
                           echo '<td>' . $row['course_description'] . '</td>';
+                          echo '<td><button type="button" class="btn btn-success" name="view" style="border-radius: 20px;">View</button></td>';
                           echo '<td>';
                           // Form for deleting the course
                           echo '<form method="post" action="drop.php">';
@@ -90,7 +91,7 @@
                           echo '<button type="submit" class="btn btn-danger" name="discard" style="border-radius: 20px;">Drop</button>';
                           echo '</form>';
                           echo '</td>';
-                        //   echo '<td><button type="button" class="btn btn-danger" name="discard" style="border-radius: 20px;">Discard</button></td>';
+                        //   echo '<td><button type="button" class="btn btn-success" name="view" style="border-radius: 20px;">View</button></td>';
                           echo '</tr>';
                       }
                   } else {
