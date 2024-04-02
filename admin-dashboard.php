@@ -1,7 +1,11 @@
 <?php
 // Start session if not already started
 session_start();
-$email = $_SESSION['login']; // Get the email of logged in user from session
+$email = $_SESSION['login'];
+if(!isset($_SESSION['login'])){
+    header("Location:login.php");
+}
+// Get the email of logged in user from session
 // Check if user is logged in and has admin role
 // if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'administrator') {
     // Redirect user to another page or display an access denied message
@@ -26,9 +30,11 @@ require_once "conn.php";
     <div class="col-lg-2 bg-primary">
         <ul class="mt-3">
                 <li style="list-style: none;" class="text-light mx-3 mt-3"><i class="bi bi-house"></i>&nbsp;<a href="admin-dashboard.php" class="text-light">Home</li><br>
-                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-person"></i>&nbsp;<a href="profile.php" class="text-light">Profile</a></li><br>
+                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-person"></i>&nbsp;<a href="admin-profile.php" class="text-light">Profile</a></li><br>
                 <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-check-square"></i>&nbsp;<a href="users.php" class="text-light">Manage users</a></li><br>
                 <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;<a href="courses.php" class="text-light">Manage courses</a></li><br>
+                <!-- <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;<a href="courses.php" class="text-light">Manage courses</a></li><br> -->
+
                 <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-box-arrow-right"></i>&nbsp;<a href="logout.php" class="text-light">Logout</a></li><br>
                 
             </ul>
