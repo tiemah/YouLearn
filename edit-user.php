@@ -13,6 +13,45 @@ if (!isset($_SESSION['login'])) {
     exit; // Ensure script execution stops after redirection
 }
 
+
+
+
+    if(isset($_POST['update'])){
+        $firstName = mysqli_real_escape_string($conn, $_POST['firstName']);
+        $lastName = mysqli_real_escape_string($conn,$_POST['lastName']);
+        $email = mysqli_real_escape_string($conn,$_POST['email']);
+        $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+
+        if(empty($firstName)){
+            echo "Please enter first name to proceed!";
+        }elseif(empty($lastName)){
+            echo "Please enter last name to proceed!";
+        }elseif(empty($email)){
+            echo "Please enter email to proceed!";
+        }elseif(!is_numeric($phone)){
+            echo "Only numbers are allowed in the phone field!";
+        }else{
+        $query=mysqli_query($conn,"UPDATE students SET firstName='$firstName',lastName='$lastName',email='$email',phone = '$phone' WHERE email='$email'")or die(mysqli_error($conn));
+
+        if($query){
+            ?>
+                        <!-- sweetalert link -->
+                        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+                        
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                swal("Good job!", "Profile updated successfully!", "success").then(() => {
+                                    window.location.href = "users.php"; // Redirect to edit user page after displaying sweet alert
+                                });
+                            });
+                        </script>
+            <?php
+                    }
+                }
+            }
+            
+    
+    
 // Query to fetch user data using email
 $query = "SELECT * FROM students WHERE email = '$email'";
 $result = mysqli_query($conn, $query);
@@ -67,28 +106,25 @@ if ($result && mysqli_num_rows($result) > 0) {
         </ul>
     </div>
     <div class="col-lg-10 mt-4">
-        <h1>Edit User</h1>
+        <h1>Manage User</h1>
         <!-- Display user details in the form -->
         <form method="post" action="">
-            <div class="mb-3">
-                <label for="firstName" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="firstName" name="firstName" value="<?php echo $firstName; ?>" required>
-            </div>
-            <div class="mb-3">
-                <label for="lastName" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="lastName" name="lastName" value="<?php echo $lastName; ?>" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" value="<?php echo $email; ?>" required>
-            </div>
-            <div class="mb-3">
-                <label for="phone" class="form-label">Phone Number</label>
-                <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $phone; ?>" required>
-            </div>
-            <!-- Add more fields as needed -->
+        <label for="firstname" class="form-label text-dark">First Name:</label>
+        <input type="text" name="firstName" class="form-control" pattern="[A-Za-z\s']+" title="Please enter letters only, numbers are not allowed!" value="<?php echo $row['firstName']; ?>" required>
+      
+        <label for="lastname" class=" form-label text-dark mt-3">Last Name:</label>
+        <input type="text" name="lastName" class="form-control" pattern="[A-Za-z\s']+" title="Please enter letters only, numbers are not allowed!" value="<?php echo $row['lastName']; ?>"required>
+
+
+        <label for="email" class="form-label text-dark mt-3">E-mail:</label>
+        <input type="email" name="email" class="form-control" value="<?php echo $row['email']; ?>" required>
+
+        <label for="Phone Number" class="form-label text-dark mt-3">Phone number:</label>
+        <input type="tel" name="phone" class="form-control" pattern="^(07\d{8}|01\d{8}|\+2547\d{8})$" value="<?php echo $row['phone']; ?>" required>
+
+            
             <input type="hidden" name="email" value="<?php echo $email; ?>"> <!-- Include email as hidden field -->
-            <button type="submit" class="btn btn-primary" style="border-radius:20px;">Save Changes</button>
+            <button type="submit" class="btn btn-primary mt-4" style="border-radius:20px;" name="update">Save Changes</button>
         </form>
     </div>
 

@@ -36,7 +36,7 @@
             <ul class="mt-3">
                 <li style="list-style: none;" class="text-light mx-3 mt-3"><i class="bi bi-house"></i>&nbsp;<a href="admin-dashboard.php" class="text-light">Home</li><br>
                 <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-person"></i>&nbsp;<a href="admin-profile.php" class="text-light">Profile</a></li><br>
-                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-person-plus"></i>&nbsp;<a href="add-user.php" class="text-light">Manage users</a></li><br>
+                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-person-plus"></i>&nbsp;<a href="users.php" class="text-light">Manage users</a></li><br>
                 <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;<a href="admin-dashboard.php" class="text-light">Manage courses</a></li><br>
                 <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-box-arrow-right"></i>&nbsp;<a href="logout.php" class="text-light">Logout</a></li><br>
             </ul>
@@ -75,7 +75,7 @@
                             // echo '<td>';
                             // Delete icon with form to submit for delete action
                             echo '<form method="post" class="d-inline" action="delete-user.php">';
-                            echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+                            // echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
                             echo '<button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>';
                             echo '</form>';
                             echo '</td>';
