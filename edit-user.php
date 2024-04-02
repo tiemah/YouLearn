@@ -19,16 +19,34 @@ if(isset($_POST['delete_course'])){
     // Perform the deletion query here
     // Example:
      $delete_query = mysqli_query($conn, "DELETE FROM enrollment WHERE course_code = '$course_code'");
-    // Check if deletion was successful and show appropriate message
-     if($delete_query) { echo "Course deleted successfully";
-     } 
-     else { echo "Failed to delete course"; }
+    // Check if the deletion was successful
+    if($delete_query){
+        ?>
+        <!-- SweetAlert link -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                swal("Good job!", "Course dropped successfully!", "success").then(() => {
+                    window.location.href = "users.php"; // Redirect to enrollment page after displaying success alert
+                });
+            });
+        </script>
+        <?php
+    } else {
+        ?>
+        <!-- SweetAlert link -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                swal("Oops!", "Failed to drop the course. Please try again", "warning").then(() => {
+                    window.location.href = "users.php"; // Redirect to courses page after displaying warning alert
+                });
+            });
+        </script>
+        <?php
+    }
 }
-
-
-
-
-
+// updating user details
     if(isset($_POST['update'])){
         $firstName = mysqli_real_escape_string($conn, $_POST['firstName']);
         $lastName = mysqli_real_escape_string($conn,$_POST['lastName']);
@@ -113,7 +131,7 @@ if ($result && mysqli_num_rows($result) > 0) {
         <ul class="mt-3">
             <li style="list-style: none;" class="text-light mx-3 mt-3"><i class="bi bi-house"></i>&nbsp;<a href="admin-dashboard.php" class="text-light">Home</a></li><br>
             <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-person"></i>&nbsp;<a href="admin-profile.php" class="text-light">Profile</a></li><br>
-            <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-person-plus"></i>&nbsp;<a href="add-user.php" class="text-light">Manage users</a></li><br>
+            <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-person-plus"></i>&nbsp;<a href="users.php" class="text-light">Manage users</a></li><br>
             <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;<a href="admin-dashboard.php" class="text-light">Manage courses</a></li><br>
             <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-box-arrow-right"></i>&nbsp;<a href="logout.php" class="text-light">Logout</a></li><br>
         </ul>
@@ -160,6 +178,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                     <td><?php echo $course['course_code']; ?></td>
                     <td><?php echo $course['course']; ?></td>
                     <td><?php echo $course['course_description']; ?></td>
+                    
                     <td>
                         <!-- Form for deleting the course -->
                         <form method="post" action="">
@@ -168,7 +187,16 @@ if ($result && mysqli_num_rows($result) > 0) {
                         </form>
                     </td>
                 </tr>
-            <?php endforeach; ?>
+            <?php endforeach;
+             if ($courses_result && mysqli_num_rows($courses_result) > 0) {
+                // Fetch all rows at once
+                $courses = mysqli_fetch_all($courses_result, MYSQLI_ASSOC);
+            }
+                else {
+                    echo '<tr><td colspan="4" class="text-dark">No courses found.</td></tr>'; // Displayed if no courses are available in the database
+                }
+            
+            ?>
             </tbody>
             </table>
         </div>
