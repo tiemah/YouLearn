@@ -92,8 +92,8 @@
 
         
 
-        <input type="submit" class="btn btn-primary mt-5 mx-5" value="UPDATE" name="submit" style="border-radius:30px;">
-        <input type="submit" class="btn btn-primary mt-5 " value="RESET"  style="margin-left: 250px; border-radius:30px;">
+        <input type="submit" class="btn btn-primary mt-3 mb-3" value="Save Changes" name="submit" style="border-radius:30px;">
+        <!-- <input type="submit" class="btn btn-primary mt-5 " value="Reset"  style="margin-left: 250px; border-radius:30px;"> -->
 
         
 
