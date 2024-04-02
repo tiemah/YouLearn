@@ -95,7 +95,7 @@
                           echo '</tr>';
                       }
                   } else {
-                      echo '<tr><td colspan="4">No courses found.</td></tr>'; // Displayed if no courses are available in the database
+                      echo '<tr><td colspan="4">You have not enrolled for any course.</td></tr>'; // Displayed if no courses are available in the database
                   }
                   ?>
 </tbody>
