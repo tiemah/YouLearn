@@ -12,6 +12,19 @@ if (!isset($_SESSION['login'])) {
     header("Location: login.php");
     exit; // Ensure script execution stops after redirection
 }
+// Handle course deletion
+if(isset($_POST['delete_course'])){
+    $course_code = $_POST['course_code'];
+
+    // Perform the deletion query here
+    // Example:
+     $delete_query = mysqli_query($conn, "DELETE FROM enrollment WHERE course_code = '$course_code'");
+    // Check if deletion was successful and show appropriate message
+     if($delete_query) { echo "Course deleted successfully";
+     } 
+     else { echo "Failed to delete course"; }
+}
+
 
 
 
@@ -149,9 +162,9 @@ if ($result && mysqli_num_rows($result) > 0) {
                     <td><?php echo $course['course_description']; ?></td>
                     <td>
                         <!-- Form for deleting the course -->
-                        <form method="post" action="delete-course.php">
-                            <input type="hidden" name="course_id" value="<?php echo $course['id']; ?>">
-                            <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i> Delete</button>
+                        <form method="post" action="">
+                            <input type="hidden" name="course_code" value="<?php echo $course['course_code']; ?>">
+                            <button type="submit" name="delete_course" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i> Delete</button>
                         </form>
                     </td>
                 </tr>
