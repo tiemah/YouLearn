@@ -83,7 +83,7 @@
                           echo '<td><button type="button" class="btn btn-success" name="view" style="border-radius: 20px;">View</button></td>';
                           echo '<td>';
                           // Form for deleting the course
-                          echo '<form method="post" action="drop.php">';
+                          echo '<form method="post" id="deleteForm" action="drop.php">';
                           echo '<input type="hidden" name="course_code" value="' . $row['course_code'] . '">';
                           echo '<input type="hidden" name="course" value="' . $row['course'] . '">';
                           echo '<input type="hidden" name="course_description" value="' . $row['course_description'] . '">';
