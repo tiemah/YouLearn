@@ -2,7 +2,7 @@
 session_start();
 require_once "conn.php";
 require_once "styles.php";
-require_once "navbar.php";
+require_once "navbar2.php";
 
 // Retrieve and decode the email parameter
 $email = isset($_GET['email']) ? base64_decode($_GET['email']) : '';
