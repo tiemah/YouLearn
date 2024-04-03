@@ -42,6 +42,8 @@ if ($courses_result && mysqli_num_rows($courses_result) > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Courses</title>
+    <!-- Include SweetAlert library -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <div class="row">
@@ -81,7 +83,10 @@ if ($courses_result && mysqli_num_rows($courses_result) > 0) {
                             <a href="edit-course.php?course_code=<?php echo $course['course_code']; ?>" class="btn btn-primary btn-sm">Edit</a></td>
                             <td>
                             <!-- Delete button -->
-                            <button class="btn btn-danger btn-sm" onclick="confirmDelete('<?php echo $course['course_code']; ?>')">Delete</button>
+                            <form method="post" action="delete-course.php" onsubmit="return confirmDelete('<?php echo $course['course_code']; ?>')">
+                                <input type="hidden" name="course_code" value="<?php echo $course['course_code']; ?>">
+                                <button type="submit" name="delete_course" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -96,5 +101,25 @@ if ($courses_result && mysqli_num_rows($courses_result) > 0) {
 <?php
     require_once "footer.php";
 ?>
+<script>
+    function confirmDelete(courseCode) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // If user confirms, submit the form
+                document.querySelector('form').submit();
+            }
+        });
+        // Prevent default form submission
+        return false;
+    }
+</script>
 </body>
 </html>
