@@ -23,14 +23,41 @@ if(isset($_POST['delete_course'])){
     if($delete_query){
         ?>
         <!-- SweetAlert link -->
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                swal("Good job!", "Course dropped successfully!", "success").then(() => {
-                    window.location.href = "users.php"; // Redirect to enrollment page after displaying success alert
-                });
+    document.addEventListener('DOMContentLoaded', function() {
+        // Function to handle course deletion confirmation
+        function confirmDelete(courseCode) {
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this course!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    // If user confirms deletion, submit the form
+                    document.getElementById('delete_course_form_' + courseCode).submit();
+                } else {
+                    // If user cancels deletion, show a message
+                    swal("Course deletion cancelled!", {
+                        icon: "info",
+                    });
+                }
             });
-        </script>
+        }
+
+        // Attach event listeners to all delete buttons
+        const deleteButtons = document.querySelectorAll('.delete-course-btn');
+        deleteButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const courseCode = this.getAttribute('data-course-code');
+                confirmDelete(courseCode);
+            });
+        });
+    });
+</script>
+
         <?php
     } else {
         ?>
