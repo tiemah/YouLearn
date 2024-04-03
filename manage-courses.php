@@ -65,26 +65,27 @@ if ($courses_result && mysqli_num_rows($courses_result) > 0) {
                     <tr>
                         <th>Course Code</th>
                         <th>Course Name</th>
+                        <th>Course Description</th>
                         <th>Edit course</th>
                         <th>Delete course</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($courses as $course) : ?>
-                        <tr>
-                            <td><?php echo $course['course_code']; ?></td>
-                            <td><?php echo $course['course_name']; ?></td>
+                <?php foreach ($courses as $course) : ?>
+                    <tr>
+                        <td><?php echo $course['course_code']; ?></td>
+                        <td><?php echo $course['course_name']; ?></td>
+                        <td><?php echo $course['course_description']; ?></td>
+                        <td>
+                            <!-- Edit button -->
+                            <a href="edit-course.php?course_code=<?php echo $course['course_code']; ?>" class="btn btn-primary btn-sm">Edit</a></td>
                             <td>
-                                <a href="edit-course.php?course_code=<?php echo $course['course_code']; ?>" class="btn btn-primary btn-sm">Edit Course</a>
-                            </td>
-                            <td>
-                                <form method="post" style="display: inline;">
-                                    <input type="hidden" name="course_code" value="<?php echo $course['course_code']; ?>">
-                                    <button type="submit" name="delete_course" class="btn btn-danger btn-sm">Delete Course</button>
-                                </form>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
+                            <!-- Delete button -->
+                            <button class="btn btn-danger btn-sm" onclick="confirmDelete('<?php echo $course['course_code']; ?>')">Delete</button>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+
                 </tbody>
             </table>
             </div>
