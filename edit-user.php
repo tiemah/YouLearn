@@ -188,6 +188,8 @@ if ($result && mysqli_num_rows($result) > 0) {
 
     <!-- Display list of courses the user has registered for -->
         <div class="col-lg-12 mt-4 mx-2">
+        <!-- <button type="submit" class="btn btn-primary mt-2"><a href="add-enrollment.php?email=<?php echo urlencode($email); ?>" class="text-light">Add Enrollment</a></button> -->
+
         <h2>Enrolled Courses</h2>
         <div class="table-responsive">
             <table class="table table-hover">
