@@ -21,19 +21,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['course_code'])) {
     $result = mysqli_query($conn, $query);
 
     if ($result) {
-        // Course details updated successfully
-        $_SESSION['success_msg'] = "Course details updated successfully.";
-    } else {
-        // Error occurred while updating course details
-        $_SESSION['error_msg'] = "Failed to update course details. Please try again.";
+                    ?>
+            <!-- SweetAlert link -->
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    swal("Good job!", "Changes updated successfully!", "success").then(() => {
+                        window.location.href = "manage-courses.php"; // Redirect to enrollment page after displaying success alert
+                    });
+                });
+            </script>
+            <?php
+        } else {
+            ?>
+            <!-- SweetAlert link -->
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    swal("Oops!", "Failed to change the course. Please try again", "warning").then(() => {
+                        window.location.href = "manage-courses.php"; // Redirect to courses page after displaying warning alert
+                    });
+                });
+            </script>
+            <?php
+        }
     }
-} else {
-    // Redirect if form is not submitted or course code is not provided
-    header("Location: manage-courses.php");
-    exit;
-}
 
-// Redirect back to the manage-courses.php page
-header("Location: manage-courses.php");
-exit;
+
+
 ?>
