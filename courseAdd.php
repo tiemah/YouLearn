@@ -6,6 +6,26 @@ if(isset($_POST['course-btn'])) {
     $course_name = mysqli_real_escape_string($conn, $_POST['course_name']);
     $course_description = mysqli_real_escape_string($conn, $_POST['course_description']);    
 
+    // Check if the course code already exists
+    $check_query = "SELECT * FROM courses WHERE course_code = '$course_code'";
+    $check_result = mysqli_query($conn, $check_query);
+
+    if(mysqli_num_rows($check_result) > 0) {
+        ?>
+        <!-- Sweetalert link -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                swal("Error", "Course code already exists!", "error").then(() => {
+                    window.location.href = "add-course.php"; // Redirect to add-course page after displaying sweet alert
+                });
+            });
+        </script>
+        <?php
+        exit; // Stop further execution if course code exists
+    }
+
     // Processing PDF file upload
     if(isset($_FILES["pdfFile"])) {
         $filename = $_FILES['pdfFile']['name'];
@@ -27,7 +47,7 @@ if(isset($_POST['course-btn'])) {
         
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                swal("Good job!", "Course added successfully!", "success").then(() => {
+                swal("Success", "Course added successfully!", "success").then(() => {
                     window.location.href = "add-course.php"; // Redirect to add-course page after displaying sweet alert
                 });
             });
