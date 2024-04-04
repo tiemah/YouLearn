@@ -1,3 +1,6 @@
+<!-- Add SweetAlert library -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <?php
 session_start();
 require_once "conn.php";
@@ -64,10 +67,12 @@ if ($result && mysqli_num_rows($result) > 0) {
                             // Edit link
                             echo '<a href="edit-user.php?email=' . base64_encode($row['email']) . '" class="btn btn-primary btn-sm"><i class="bi bi-pencil"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
                             // Delete form
-                            echo '<form method="post" class="d-inline" action="delete-user.php">';
-                            // echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-                            echo '<button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>';
-                            echo '</form>';
+                            ?>
+                            <form method="post" class="d-inline delete-user-form" action="delete-user.php">
+                                <input type="hidden" name="email" value="<?php echo $row['email']; ?>">
+                                <button type="button" class="btn btn-danger btn-sm delete-user-btn"><i class="bi bi-trash"></i></button>
+                            </form>
+                            <?php
                             echo '</td>';
                             echo '</tr>';
                         }
@@ -118,7 +123,24 @@ if ($result && mysqli_num_rows($result) > 0) {
 require_once "footer.php";
 ?>
 
-<!-- bootstrap js cdn link -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
+<!-- Script for SweetAlert confirmation dialog -->
+<script>
+    // Listen for click events on delete buttons
+    document.querySelectorAll('.delete-user-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            // Show SweetAlert confirmation dialog
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this user!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((willDelete) => {
+                if (willDelete) {
+                    // If user confirms, submit the form
+                    button.closest('form').submit();
+                }
+            });
+        });
+    });
+</script>
