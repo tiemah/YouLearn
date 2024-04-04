@@ -27,16 +27,16 @@ if(isset($_POST['course-btn'])) {
     }
 
     // Processing PDF file upload
-    if(isset($_FILES["pdfFile"])) {
-        $filename = $_FILES['pdfFile']['name'];
-        $filetype = $_FILES['pdfFile']['type'];
-        $filedata = file_get_contents($_FILES['pdfFile']['tmp_name']);
-    }
+    // if(isset($_FILES["pdfFile"])) {
+    //     $filename = $_FILES['pdfFile']['name'];
+    //     $filetype = $_FILES['pdfFile']['type'];
+    //     $filedata = file_get_contents($_FILES['pdfFile']['tmp_name']);
+    // }
 
     // Inserting into the database using prepared statement
-    $query = "INSERT INTO courses (course_code, course_name, course_description, filename, filetype, filedata) VALUES (?, ?, ?, ?, ?, ?)";
+    $query = "INSERT INTO courses (course_code, course_name, course_description) VALUES (?, ?, ?)";
     $stmt = mysqli_prepare($conn, $query);
-    mysqli_stmt_bind_param($stmt, "ssssss", $course_code, $course_name, $course_description, $filename, $filetype, $filedata);
+    mysqli_stmt_bind_param($stmt, "sss", $course_code, $course_name, $course_description);
     $result = mysqli_stmt_execute($stmt);
 
     // Check if the query was successful

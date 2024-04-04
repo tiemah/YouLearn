@@ -11,9 +11,19 @@
         require_once "styles.php";
     ?>
     <div class="row mb-5">
-        <div class="col-lg-4"></div>
+    <div class="row mt-0">
+        <div class="col-lg-2 bg-primary mt-5">
+            <!-- Sidebar content -->
+            <ul class="mt-3">
+                <li style="list-style: none;" class="text-light mx-3 mt-3"><i class="bi bi-house"></i>&nbsp;<a href="admin-dashboard.php" class="text-light">Home</li><br>
+                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-person"></i>&nbsp;<a href="admin-profile.php" class="text-light">Profile</a></li><br>
+                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-person-plus"></i>&nbsp;<a href="users.php" class="text-light">Manage users</a></li><br>
+                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;<a href="manage-courses.php" class="text-light">Manage courses</a></li><br>
+                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-box-arrow-right"></i>&nbsp;<a href="logout.php" class="text-light">Logout</a></li><br>
+            </ul>
+        </div>
 
-        <div class="col-lg-4">
+        <div class="col-lg-10">
             <h2 class="mt-4 text-center">Add Course</h2>
             <form action="courseAdd.php" method="POST" enctype="multipart/form-data">
                 
@@ -28,9 +38,9 @@
                 <label for="exampleFormControlTextarea1" class="form-label text-dark">Course Description</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" name="course_description" placeholder="e.g Laws of Software" rows="3"></textarea>
                 </div>
-                <!-- Input field for uploading PDF file -->
+                <!-- Input field for uploading PDF file
                 <label for="pdfFile" class="text-dark">Upload File</label><br>
-                <input type="file" id="pdfFile" name="pdfFile"><br><br>
+                <input type="file" id="pdfFile" name="pdfFile"><br><br> -->
 
                  <div class="buttons mx-5 mt-3">
                 <button class="btn btn-primary" name="course-btn" value="submit" style="border-radius: 20px;">Add</button>
