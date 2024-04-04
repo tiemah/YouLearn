@@ -83,10 +83,11 @@ if ($courses_result && mysqli_num_rows($courses_result) > 0) {
                             <a href="edit-course.php?course_code=<?php echo $course['course_code']; ?>" class="btn btn-primary btn-sm">Edit</a></td>
                             <td>
                             <!-- Delete button -->
-                            <form method="post" action="delete-course.php" onsubmit="return confirmDelete('<?php echo $course['course_code']; ?>')">
-                                <input type="hidden" name="course_code" value="<?php echo $course['course_code']; ?>">
-                                <button type="submit" name="delete_course" class="btn btn-danger btn-sm">Delete</button>
-                            </form>
+                    <form method="post" action="delete-course.php" onsubmit="return confirmDelete(this)">
+                        <input type="hidden" name="course_code" value="<?php echo $course['course_code']; ?>">
+                        <button type="submit" name="delete_course" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -102,7 +103,7 @@ if ($courses_result && mysqli_num_rows($courses_result) > 0) {
     require_once "footer.php";
 ?>
 <script>
-    function confirmDelete(courseCode) {
+    function confirmDelete(form) {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -114,12 +115,13 @@ if ($courses_result && mysqli_num_rows($courses_result) > 0) {
         }).then((result) => {
             if (result.isConfirmed) {
                 // If user confirms, submit the form
-                document.querySelector('form').submit();
+                form.submit();
             }
         });
         // Prevent default form submission
         return false;
     }
 </script>
+
 </body>
 </html>
