@@ -19,13 +19,33 @@ if(isset($_POST['material-btn'])) {
     $result = mysqli_stmt_execute($stmt);
 
     // Check if the query was successful
-    if($result) {
-        // Material added successfully
-        echo "Material added successfully!";
+     // Check if the query was successful
+     if($result){
+        ?>
+        <!-- SweetAlert link -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                swal("Hooray!", "Material addded successfully!", "success").then(() => {
+                    window.location.href = "add_material.php"; // Redirect to login page after displaying success alert
+                });
+            });
+        </script>
+        <?php
     } else {
-        // Error occurred
-        echo "Error: " . mysqli_error($conn);
+        // Display error message if the query fails
+        ?>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                swal("Oops!", "Failed to add material. Please try again later.", "error").then(() => {
+                    window.location.href = "add_material.php"; // Redirect to register page after displaying error alert
+                });
+            });
+        </script>
+        <?php
     }
+
 
     // Close the statement
     mysqli_stmt_close($stmt);
