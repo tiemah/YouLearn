@@ -80,7 +80,9 @@
                           echo '<td>' . $row['course_code'] . '</td>';
                           echo '<td>' . $row['course'] . '</td>';
                           echo '<td>' . $row['course_description'] . '</td>';
-                          echo '<td><button type="button" class="btn btn-success" name="view" style="border-radius: 20px;">View</button></td>';
+                        //   <!-- Inside the while loop where you display course rows -->
+                          echo '<td><a href="view-materials.php?course_code=' . $row['course_code'] . '" class="btn btn-success" style="border-radius: 20px;">View</a></td>';
+
                           echo '<td>';
                           // Form for deleting the course
                           echo '<form method="post" id="deleteForm" action="drop.php">';
