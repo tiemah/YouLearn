@@ -8,7 +8,7 @@ if(isset($_GET['course_code'])) {
     $course_code = $_GET['course_code'];
 
     // Query to fetch the material data from the database
-    $query = "SELECT material_filedata FROM learning_materials WHERE course_code = ?";
+    $query = "SELECT material_filedata, material_filetype FROM learning_materials WHERE course_code = ?";
 
     // Prepare the SQL statement
     $stmt = mysqli_prepare($conn, $query);
@@ -29,37 +29,32 @@ if(isset($_GET['course_code'])) {
         die(mysqli_error($conn)); // Display any error message if there's an issue with executing the SQL query
     }
 
-    // Bind the result variable to the statement
-    mysqli_stmt_bind_result($stmt, $material_filedata);
+    // Bind the result variables to the statement
+    mysqli_stmt_bind_result($stmt, $material_filedata, $material_filetype);
 
-    // Fetch the result
-    mysqli_stmt_fetch($stmt);
+    // Display the material content for each row fetched
+    while (mysqli_stmt_fetch($stmt)) {
+        echo '<div>';
+        echo '<h1>Course Code: ' . htmlspecialchars($course_code) . '</h1>';
+        echo '<h2>Material Content</h2>';
+        
+        // Check if material file data exists
+        if ($material_filedata) {
+            // Check file type to determine how to display it
+            if ($material_filetype === 'application/pdf') {
+                // Embed PDF content
+                echo '<embed src="data:application/pdf;base64,' . base64_encode($material_filedata) . '" type="application/pdf" width="100%" height="600px">';
+            } else {
+                // For other file types, provide a download link
+                echo '<a href="data:' . $material_filetype . ';base64,' . base64_encode($material_filedata) . '" download>Download File</a>';
+            }
+        } else {
+            echo '<p>No material available for this course.</p>';
+        }
+        echo '</div>';
+    }
 
     // Close the statement
     mysqli_stmt_close($stmt);
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Materials</title>
-</head>
-<body>
-    <div>
-        <h1>Course Code: <?php echo htmlspecialchars($course_code); ?></h1>
-        <h2>Material Content</h2>
-        <!-- Embed the PDF content -->
-        <?php
-        // Check if material file data exists
-        if ($material_filedata) {
-            echo '<embed src="data:application/pdf;base64,' . base64_encode($material_filedata) . '" type="application/pdf" width="100%" height="600px">';
-        } else {
-            echo '<p>No material available for this course.</p>';
-        }
-        ?>
-    </div>
-</body>
-</html>
