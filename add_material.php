@@ -61,15 +61,15 @@ if(isset($_FILES["pdfFile"])) {
             <h3 class="mt-5">Add Learning Material</h3><br>
             <form action="process-material.php" method="post" enctype="multipart/form-data">
                 <label for="course_code">Course Code:</label><br>
-                <input type="text" id="course_code" name="course_code"><br>
+                <input type="text" id="course_code" name="course_code" class="form-control text-dark"><br>
                 
                 <label for="material_title">Material Title:</label><br>
-                <input type="text" id="material_title" name="material_title"><br>
+                <input type="text" id="material_title" name="material_title" class="form-control text-dark"><br>
                 
                 <label for="material_file">Select File:</label><br>
-                <input type="file" id="material_file" name="material_file"><br>
+                <input type="file" id="material_file" name="material_file" ><br>
                 
-                <input type="submit" name="material-btn" value="Upload Material">
+                <input type="submit" name="material-btn" value="Upload Material" class="btn btn-primary mt-3" style="border-radius: 20px;">
             </form>
 
         </div>
