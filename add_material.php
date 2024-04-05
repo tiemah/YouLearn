@@ -1,41 +1,52 @@
 <?php
-// Include database connection
 require_once "conn.php";
-require_once "navbar2.php";
 require_once "styles.php";
+require_once "navbar2.php";
 
 // Check if form is submitted
-if(isset($_POST['add_material'])){
-    // Sanitize input
+if(isset($_POST['material-btn'])) {
     $course_code = mysqli_real_escape_string($conn, $_POST['course_code']);
-    $material_name = mysqli_real_escape_string($conn, $_POST['material_name']);
+    $course_name = mysqli_real_escape_string($conn, $_POST['course_name']);
 
-    // File upload handling
-    $targetDir = "uploads/";
-    $fileName = basename($_FILES["material_file"]["name"]);
-    $targetFilePath = $targetDir . $fileName;
-    $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+    // Processing file upload
+if(isset($_FILES["pdfFile"])) {
+    $filename = $_FILES['pdfFile']['name'];
+    $filetype = $_FILES['pdfFile']['type'];
+    $filedata = file_get_contents($_FILES['pdfFile']['tmp_name']);
+    $material_filename = $filename; // Set material filename to uploaded file name
+}
 
-    // Allow certain file formats
-    $allowTypes = array('pdf', 'doc', 'docx', 'txt');
-    if(in_array($fileType, $allowTypes)){
-        // Upload file to server
-        if(move_uploaded_file($_FILES["material_file"]["tmp_name"], $targetFilePath)){
-            // Insert material details into database
-            $insertQuery = "INSERT INTO learning_materials (course_code, material_name, material_file) VALUES ('$course_code', '$material_name', '$targetFilePath')";
-            if(mysqli_query($conn, $insertQuery)){
-                echo "Material added successfully.";
-            } else{
-                echo "Error: " . mysqli_error($conn);
-            }
-        } else{
-            echo "Error uploading file.";
-        }
-    } else{
-        echo "File type not allowed.";
+
+    // Inserting into the database using prepared statement
+    $query = "INSERT INTO learning_materials (course_code, course_name, material_filename, material_file, file_type, file_data) VALUES (?, ?, ?, ?, ?, ?)";
+
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($stmt, "ssssss", $course_code, $course_name, $material_filename, $filename, $filetype, $filedata);
+    $result = mysqli_stmt_execute($stmt);
+
+    // Check if the query was successful
+    if($result) {
+        ?>
+        <!-- Sweetalert link -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                swal("Good job!", "Material added successfully!", "success").then(() => {
+                    window.location.href = "add_material.php"; // Redirect to add_material page after displaying sweet alert
+                });
+            });
+        </script>
+        <?php
+    } else {
+        echo "Error: " . mysqli_error($conn);
     }
+
+    // Close the statement
+    mysqli_stmt_close($stmt);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,24 +59,19 @@ if(isset($_POST['add_material'])){
         <div class="col-lg-4"></div>
         <div class="col-lg-4">
             <h3 class="mt-5">Add Learning Material</h3><br>
-            <form action=""  method="post" enctype="multipart/form-data">
-                <!-- Course code -->
-                <label for="course_code" class="text-dark">Course Code</label><br>
-                <input type="text" id="course_code" name="course_code" class="form-control" required><br>
+            <form action="process-material.php" method="post" enctype="multipart/form-data">
+                <label for="course_code">Course Code:</label><br>
+                <input type="text" id="course_code" name="course_code"><br>
                 
-                <!-- Material title -->
-                <label for="mat_title" class="text-dark"> Course Title</label><br>
-                <input type="text" id="mat_title" name="material_name" class="form-control" required><br>
+                <label for="material_title">Material Title:</label><br>
+                <input type="text" id="material_title" name="material_title"><br>
+                
+                <label for="material_file">Select File:</label><br>
+                <input type="file" id="material_file" name="material_file"><br>
+                
+                <input type="submit" name="material-btn" value="Upload Material">
+            </form>
 
-                <!-- File upload -->
-                <label for="fileUpload" class="text-dark">Upload File</label><br>
-                <input type="file" id="fileUpload" accept=".pdf,.docx,.pptx" name="material_file" accept=".pdf,.docx,.pptx" required><br>
-                <!-- <input type="file" id="fileUpload" name="material_file" accept=".pdf,.docx,.pptx"><br> -->
-                <small>Allowed types: .pdf, .docx, .pptx</small><br><br>
-
-                <!-- Submit button -->
-                <input type="submit" value="Submit" name="add_material" class="btn btn-primary" style="border-radius: 20px;">
-            </form> 
         </div>
     </div>
     <?php
