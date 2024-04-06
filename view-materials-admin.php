@@ -42,7 +42,7 @@ if(isset($_GET['course_code'])) {
 
     // Check if any rows were fetched
     $rows_fetched = false;
-    echo '<a href="view-courses.php" class="btn btn-primary  mb-2 mx-3" style="border-radius: 20px;">Go back to courses</a>';
+    echo '<a href="manage-courses.php" class="btn btn-primary  mb-2 mx-3" style="border-radius: 20px;">Go back to courses</a>';
     echo '<div class="row">';
     
     while (mysqli_stmt_fetch($stmt)) {
@@ -75,7 +75,7 @@ if(isset($_GET['course_code'])) {
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 swal("Oops!", "No available materials for this course. Please check again later.", "error").then(() => {
-                    window.location.href = "view-materials.php"; // Redirect to register page after displaying error alert
+                    window.location.href = "manage-courses.php"; // Redirect to register page after displaying error alert
                 });
             });
         </script>

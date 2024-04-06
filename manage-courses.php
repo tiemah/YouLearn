@@ -79,7 +79,7 @@ if ($courses_result && mysqli_num_rows($courses_result) > 0) {
                         <td><?php echo $course['course_code']; ?></td>
                         <td><?php echo $course['course_name']; ?></td>
                         <td><?php echo $course['course_description']; ?></td>
-                        <td><a href="view-materials.php?course_code=<?php echo $course['course_code']; ?>"class="btn btn-success btn-sm">View</a></td>
+                        <td><a href="view-materials-admin.php?course_code=<?php echo $course['course_code']; ?>"class="btn btn-success btn-sm">View</a></td>
                         <td>
                             <!-- Edit button -->
                             
