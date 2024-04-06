@@ -47,7 +47,7 @@ if(isset($_GET['course_code'])) {
     
     while (mysqli_stmt_fetch($stmt)) {
         $rows_fetched = true;
-        echo '<div class="col-lg-6 mb-3">';
+        echo '<div class="col-lg-6 mb-5">';
         // echo '<h1>Course Code: ' . htmlspecialchars($course_code) . '</h1>';
         // echo '<h2>Material Content</h2>';
         
