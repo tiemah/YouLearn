@@ -68,6 +68,7 @@ if ($courses_result && mysqli_num_rows($courses_result) > 0) {
                         <th>Course Code</th>
                         <th>Course Name</th>
                         <th>Course Description</th>
+                        <th>Materials</th>
                         <th>Edit course</th>
                         <th>Delete course</th>
                     </tr>
@@ -78,8 +79,10 @@ if ($courses_result && mysqli_num_rows($courses_result) > 0) {
                         <td><?php echo $course['course_code']; ?></td>
                         <td><?php echo $course['course_name']; ?></td>
                         <td><?php echo $course['course_description']; ?></td>
+                        <td><a href="view-materials.php?course_code=<?php echo $course['course_code']; ?>"class="btn btn-success btn-sm">View</a></td>
                         <td>
                             <!-- Edit button -->
+                            
                             <a href="edit-course.php?course_code=<?php echo $course['course_code']; ?>" class="btn btn-primary btn-sm">Edit</a></td>
                             <td>
                             <!-- Delete button -->
