@@ -95,7 +95,7 @@ if ($courses_result && mysqli_num_rows($courses_result) > 0) {
                 </tbody>
             </table>
             </div>
-            <a href="add-course.php" class="btn btn-primary" style="border-radius: 20px;">Add Course</a>
+            <a href="add-course.php" class="btn btn-primary mt-3 mb-3" style="border-radius: 20px;">Add Course</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="add_material.php" class="btn btn-primary mt-3 mb-3" style="border-radius: 20px;">Add Learning Material</a>
         </div>
     </div>
 </div>
@@ -122,6 +122,10 @@ if ($courses_result && mysqli_num_rows($courses_result) > 0) {
         return false;
     }
 </script>
+    <!-- JavaScript Libraries -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 </html>

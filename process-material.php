@@ -26,8 +26,8 @@ if(isset($_POST['material-btn'])) {
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                swal("Hooray!", "Material addded successfully!", "success").then(() => {
-                    window.location.href = "add_material.php"; // Redirect to login page after displaying success alert
+                swal("Success!", "Material addded successfully!", "success").then(() => {
+                    window.location.href = "manage-courses.php"; 
                 });
             });
         </script>
@@ -39,7 +39,7 @@ if(isset($_POST['material-btn'])) {
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 swal("Oops!", "Failed to add material. Please try again later.", "error").then(() => {
-                    window.location.href = "add_material.php"; // Redirect to register page after displaying error alert
+                    window.location.href = "add_material.php"; 
                 });
             });
         </script>
