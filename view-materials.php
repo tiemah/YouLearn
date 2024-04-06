@@ -75,7 +75,7 @@ if(isset($_GET['course_code'])) {
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 swal("Oops!", "No available materials for this course. Please check again later.", "error").then(() => {
-                    window.location.href = "view-courses.php"; // Redirect to register page after displaying error alert
+                    window.location.href = "view-materials.php"; // Redirect to register page after displaying error alert
                 });
             });
         </script>
