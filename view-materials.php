@@ -37,12 +37,17 @@ if(isset($_GET['course_code'])) {
     // Display the material content for each row fetched
     // echo '<h1>Course Code: ' . htmlspecialchars($course_code) . '</h1>';
     echo '<h2 class = "mt-3 mx-3">Learning materials for ' . htmlspecialchars($course_code) . '</h2>';
+    echo '<p class ="text-dark mt-2 mx-3">Dear learner, Kindly note that the learning materials are arranged topic-wise from the first lecture to the last lecture.</p>';
+    echo '<p class ="text-dark  mx-3">You can choose to either view the materials on the website  or download them.</p>';
 
     // Check if any rows were fetched
     $rows_fetched = false;
+    echo '<a href="view-courses.php" class="btn btn-primary  mb-2 mx-3" style="border-radius: 20px;">Go back to courses</a>';
+    echo '<div class="row">';
+    
     while (mysqli_stmt_fetch($stmt)) {
         $rows_fetched = true;
-        echo '<div>';
+        echo '<div class="col-lg-6 mb-3">';
         // echo '<h1>Course Code: ' . htmlspecialchars($course_code) . '</h1>';
         // echo '<h2>Material Content</h2>';
         
@@ -51,7 +56,7 @@ if(isset($_GET['course_code'])) {
             // Check file type to determine how to display it
             if ($material_filetype === 'application/pdf') {
                 // Embed PDF content
-                echo '<embed src="data:application/pdf;base64,' . base64_encode($material_filedata) . '" type="application/pdf" width="50%" height="600px">';
+                echo '<embed src="data:application/pdf;base64,' . base64_encode($material_filedata) . '" type="application/pdf" width="100%" height="400px">';
             } else {
                 // For other file types, provide a download link
                 echo '<a href="data:' . $material_filetype . ';base64,' . base64_encode($material_filedata) . '" download>Download File</a>';
@@ -61,6 +66,7 @@ if(isset($_GET['course_code'])) {
         }
         echo '</div>';
     }
+    echo '</div>';
 
     // If no rows were fetched, display a message
     if (!$rows_fetched) {
