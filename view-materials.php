@@ -38,7 +38,7 @@ if(isset($_GET['course_code'])) {
     // echo '<h1>Course Code: ' . htmlspecialchars($course_code) . '</h1>';
     echo '<h2 class = "mt-3 mx-3">Learning materials for ' . htmlspecialchars($course_code) . '</h2>';
     echo '<p class ="text-dark mt-2 mx-3">Dear learner, Kindly note that the learning materials are arranged topic-wise from the first lecture to the last lecture.</p>';
-    echo '<p class ="text-dark  mx-3">You can choose to either view the materials on the website  or download them.</p>';
+    echo '<p class ="text-dark  mx-3">You can choose to either view the materials on the website  or download them.<br><b>Note that for files that are not pdf, you will have to download them first in order to preview them</b>.<b>A link to download the file is provided</b></p>';
 
     // Check if any rows were fetched
     $rows_fetched = false;
@@ -59,7 +59,7 @@ if(isset($_GET['course_code'])) {
                 echo '<embed src="data:application/pdf;base64,' . base64_encode($material_filedata) . '" type="application/pdf" width="100%" height="400px">';
             } else {
                 // For other file types, provide a download link
-                echo '<a href="data:' . $material_filetype . ';base64,' . base64_encode($material_filedata) . '" download>Download File</a>';
+                echo '<a href="data:' . $material_filetype . ';base64,' . base64_encode($material_filedata) . '"  class = "mx-4" download>Download Material</a>';
             }
         } else {
             echo '<p>No material available for this course.</p>';
