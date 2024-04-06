@@ -2,7 +2,7 @@
 // Include database connection and start session if not already started
 require_once "conn.php";
 require_once "styles.php";
-require_once "navbar.php";
+require_once "navbar2.php";
 session_start();
 
 // Check if the material ID is provided in the URL
