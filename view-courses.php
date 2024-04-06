@@ -27,25 +27,24 @@
         // Loop through the fetched course data and display them
         // ...
     } else {
-        echo '<div class="alert alert-info" role="alert">You have not enrolled in any courses yet.</div>';
+        // echo '<div class="alert alert-info" role="alert">You have not enrolled in any courses yet.</div>';
     }
 ?>
 
     
     
-    <div class="row mt-0">
-        <div class="col-lg-2 bg-primary mt-5">
-            <!-- Sidebar content -->
+<div class="row mt-0">
+        <div class="col-lg-2 bg-primary">
             <ul class="mt-3">
                 <li style="list-style: none;" class="text-light mx-3 mt-3"><i class="bi bi-house"></i>&nbsp;<a href="student-dashboard.php" class="text-light">Dashboard</li><br>
                 <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-person"></i>&nbsp;<a href="profile.php" class="text-light">Profile</a></li><br>
                 <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-check-square"></i>&nbsp;<a href="enrollment.php" class="text-light">Course enrollment</a></li><br>
-                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;<a href="view-courses.php" class="text-light">View Courses</a></li><br>
+                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;<a href="view-courses.php" class="text-light">View enrolled courses</a></li><br>
                 <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-box-arrow-right"></i>&nbsp;<a href="logout.php" class="text-light">Logout</a></li><br>
-                
+
             </ul>
         </div>
-        <div class="col-lg-10 mt-5">
+        <div class="col-lg-10 mt-2">
           <div class="table-responsive">
             <table class="table table-hover">
                 <thead class="table-dark">
