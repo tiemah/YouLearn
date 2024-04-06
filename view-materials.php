@@ -1,6 +1,8 @@
 <?php
 // Include database connection and start session if not already started
 require_once "conn.php";
+require_once "styles.php";
+require_once "navbar.php";
 session_start();
 
 // Check if the material ID is provided in the URL
@@ -33,17 +35,23 @@ if(isset($_GET['course_code'])) {
     mysqli_stmt_bind_result($stmt, $material_filedata, $material_filetype);
 
     // Display the material content for each row fetched
+    // echo '<h1>Course Code: ' . htmlspecialchars($course_code) . '</h1>';
+    echo '<h2 class = "mt-3 mx-3">Learning materials for ' . htmlspecialchars($course_code) . '</h2>';
+
+    // Check if any rows were fetched
+    $rows_fetched = false;
     while (mysqli_stmt_fetch($stmt)) {
+        $rows_fetched = true;
         echo '<div>';
-        echo '<h1>Course Code: ' . htmlspecialchars($course_code) . '</h1>';
-        echo '<h2>Material Content</h2>';
+        // echo '<h1>Course Code: ' . htmlspecialchars($course_code) . '</h1>';
+        // echo '<h2>Material Content</h2>';
         
         // Check if material file data exists
         if ($material_filedata) {
             // Check file type to determine how to display it
             if ($material_filetype === 'application/pdf') {
                 // Embed PDF content
-                echo '<embed src="data:application/pdf;base64,' . base64_encode($material_filedata) . '" type="application/pdf" width="100%" height="600px">';
+                echo '<embed src="data:application/pdf;base64,' . base64_encode($material_filedata) . '" type="application/pdf" width="50%" height="600px">';
             } else {
                 // For other file types, provide a download link
                 echo '<a href="data:' . $material_filetype . ';base64,' . base64_encode($material_filedata) . '" download>Download File</a>';
@@ -54,7 +62,22 @@ if(isset($_GET['course_code'])) {
         echo '</div>';
     }
 
+    // If no rows were fetched, display a message
+    if (!$rows_fetched) {
+        ?>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                swal("Oops!", "No available materials for this course. Please check again later.", "error").then(() => {
+                    window.location.href = "view-courses.php"; // Redirect to register page after displaying error alert
+                });
+            });
+        </script>
+        <?php
+    }
+
     // Close the statement
     mysqli_stmt_close($stmt);
 }
+require_once "footer.php";
 ?>
