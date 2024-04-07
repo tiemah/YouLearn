@@ -29,18 +29,18 @@ $result = mysqli_query($conn, $query);
 
 if ($result && mysqli_num_rows($result) > 0) {
     ?>
-    <div class="row mt-0">
-        <div class="col-lg-2 bg-primary mt-5">
-            <!-- Sidebar content -->
-            <ul class="mt-3">
-                <li style="list-style: none;" class="text-light mx-3 mt-3"><i class="bi bi-house"></i>&nbsp;<a href="admin-dashboard.php" class="text-light">Home</li><br>
-                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-person"></i>&nbsp;<a href="admin-profile.php" class="text-light">Profile</a></li><br>
-                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-person-plus"></i>&nbsp;<a href="users.php" class="text-light">Manage users</a></li><br>
-                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;<a href="admin-dashboard.php" class="text-light">Manage courses</a></li><br>
-                <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-box-arrow-right"></i>&nbsp;<a href="logout.php" class="text-light">Logout</a></li><br>
-            </ul>
+     <div class="row mt-0">
+    <!-- <h1 class="text-center">Welcome, Admin!</h1> -->
+    <div class="col-lg-2 bg-primary">
+    <ul class="mt-3">
+            <li style="list-style: none;" class="text-light mx-3 mt-3"><i class="bi bi-house"></i>&nbsp;<a href="admin-dashboard.php" class="text-light">Home</a></li><br>
+            <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-person"></i>&nbsp;<a href="admin-profile.php" class="text-light">Profile</a></li><br>
+            <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-person-plus"></i>&nbsp;<a href="users.php" class="text-light">Manage users</a></li><br>
+            <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-book"></i>&nbsp;<a href="manage-courses.php" class="text-light">Manage courses</a></li><br>
+            <li style="list-style: none;" class="text-light mx-3"><i class="bi bi-box-arrow-right"></i>&nbsp;<a href="logout.php" class="text-light">Logout</a></li><br>
+        </ul>
         </div>
-        <div class="col-lg-10 mt-5">
+        <div class="col-lg-10 mt-2">
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead class="table-dark">
