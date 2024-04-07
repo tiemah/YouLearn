@@ -2,7 +2,7 @@
  <?php
     require_once "styles.php";
 ?>
- <div class="container-fluid bg-dark text-light footer pt-5 mt-2 wow fadeIn" data-wow-delay="0.1s">
+ <div class="container-fluid bg-dark text-light footer pt-5 pb-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-2">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
