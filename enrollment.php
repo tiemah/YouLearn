@@ -8,8 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <?php
+<?php
         session_start();
+        $email = $_SESSION['login'];
+        if(!isset($_SESSION['login'])){
+            header("Location:login.php");
+        }
         require_once "navbar2.php";
         require_once "styles.php";
         require_once "conn.php"; // Include the file containing database connection details

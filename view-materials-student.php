@@ -1,9 +1,15 @@
 <?php
+
+session_start();
+$email = $_SESSION['login'];
+if(!isset($_SESSION['login'])){
+    header("Location:login.php");
+}
 // Include database connection and start session if not already started
 require_once "conn.php";
 require_once "styles.php";
 require_once "navbar2.php";
-session_start();
+
 
 // Check if the material ID is provided in the URL
 if(isset($_GET['course_code'])) {

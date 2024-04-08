@@ -1,4 +1,9 @@
 <?php
+session_start();
+$email = $_SESSION['login'];
+if(!isset($_SESSION['login'])){
+    header("Location:login.php");
+}
 require_once "conn.php";
 require_once "styles.php";
 require_once "navbar2.php";
