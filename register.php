@@ -1,12 +1,11 @@
 <?php
 session_start();
-    
+
 if(isset($_SESSION['login'])){
     header("Location:student-dashboard.php");
 }
 
-
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,46 +68,65 @@ if(isset($_SESSION['login'])){
     require_once "footer.php";
 
     if(isset($_POST['submit'])){
-        // cleaning inputs usin the mysql_real_escape_string() that returns the escaped string thus preventing SQL injection attacks
+        // cleaning inputs using mysqli_real_escape_string() to prevent SQL injection attacks
         $firstName = mysqli_real_escape_string($conn, $_POST['first_name']);
         $lastName = mysqli_real_escape_string($conn, $_POST['last_name']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $phone = mysqli_real_escape_string($conn, $_POST['phone']);
         $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-        $password_hash= password_hash($password, PASSWORD_DEFAULT); //hashes the password input bu the user using the PASSWORD_DEFAULT algorithm
+        // Check if email already exists in the database
+        $email_check_query = "SELECT * FROM students WHERE email='$email' LIMIT 1";
+        $email_result = mysqli_query($conn, $email_check_query);
+        $email_exists = mysqli_fetch_assoc($email_result);
 
-        // $sql = "INSERT INTO students(firstName, lastName, email, phone, password, user_role) VALUES(?,?,?,?,?, 'registered_user')";
-        
+        // Check if phone number already exists in the database
+        $phone_check_query = "SELECT * FROM students WHERE phone='$phone' LIMIT 1";
+        $phone_result = mysqli_query($conn, $phone_check_query);
+        $phone_exists = mysqli_fetch_assoc($phone_result);
 
-        $query = mysqli_query($conn, "INSERT INTO students(firstName, lastName, email, phone, password_hash, user_role) VALUES('$firstName', '$lastName', '$email', '$phone', '$password_hash','registered_user')") or die(mysqli_error($conn));
-        
-
-        // Check if the query was successful
-        if($query){
+        // If email or phone number already exists, display appropriate SweetAlert notification
+        if ($email_exists) {
             ?>
-            <!-- SweetAlert link -->
-            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
             <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    swal("Hooray!", "Registered successfully!", "success").then(() => {
-                        window.location.href = "login.php"; // Redirect to login page after displaying success alert
-                    });
-                });
+                swal("Oops!", "Email already exists. Please use a different email.", "error");
+            </script>
+            <?php
+        } elseif ($phone_exists) {
+            ?>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script>
+                swal("Oops!", "Phone number already exists. Please use a different phone number.", "error");
             </script>
             <?php
         } else {
-            // Display error message if the query fails
-            ?>
-            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
+            // If email and phone number don't exist, proceed with registration
+            $password_hash = password_hash($password, PASSWORD_DEFAULT);
+
+            $query = mysqli_query($conn, "INSERT INTO students(firstName, lastName, email, phone, password_hash, user_role) VALUES('$firstName', '$lastName', '$email', '$phone', '$password_hash','registered_user')") or die(mysqli_error($conn));
+
+            // Check if the query was successful
+            if ($query) {
+                ?>
+                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                <script>
+                    swal("Hooray!", "Registered successfully!", "success").then(() => {
+                        window.location.href = "login.php"; // Redirect to login page after displaying success alert
+                    });
+                </script>
+                <?php
+            } else {
+                // Display error message if the query fails
+                ?>
+                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                <script>
                     swal("Oops!", "Failed to register. Please try again later.", "error").then(() => {
                         window.location.href = "register.php"; // Redirect to register page after displaying error alert
                     });
-                });
-            </script>
-            <?php
+                </script>
+                <?php
+            }
         }
     }
 
@@ -117,12 +135,4 @@ if(isset($_SESSION['login'])){
 
     
     <!--  bootstrap js link-->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
-
-      <!-- JavaScript Libraries -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    
-</body>
-</html>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNy
