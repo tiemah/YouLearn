@@ -39,13 +39,26 @@ if(isset($_POST['submit'])){
             } else {
                 echo "user_role not defined for this user"; // Handle the case where 'user_role' key is not defined
             }
-        } else {
-            echo "Invalid password";
+        
+
         }
-    } else {
-        echo "Invalid credentials";
+     else {
+        ?>
+        <!-- Sweetalert link -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                swal("Error", "Invalid credentials!", "error").then(() => {
+                    window.location.href = "login.php"; // Redirect login page after displaying sweet alert
+                });
+            });
+        </script>
+        <?php
     }
-}    
+}
+}
+   
 
 ?>
 
