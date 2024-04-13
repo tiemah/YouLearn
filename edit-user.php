@@ -202,7 +202,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                                 <option value="<?php echo $role['user_role']; ?>"><?php echo $role['user_role']; ?></option>
                             <?php endif; ?>
                         <?php endforeach; ?>
-                    </select>
+                    </select><br>
 
 
 
