@@ -27,7 +27,7 @@ if($delete_query){
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             swal("Good job!", "User deleted successfully!", "success").then(() => {
-                window.location.href = "manage-users.php"; // Redirect to manage users page after displaying success alert
+                window.location.href = "users.php"; // Redirect to manage users page after displaying success alert
             });
         });
     </script>
