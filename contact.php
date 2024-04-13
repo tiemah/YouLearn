@@ -20,35 +20,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $query = mysqli_query($conn, "INSERT INTO contact(name, email, subject, message) VALUES('$name', '$email', '$subject', '$message')") or die(mysqli_error($conn));
 
-
-        // Send email (replace the email address with your desired recipient)
-        // $to = "doreentiema87@gmail.com";
-        // $headers = "From: $name <$email>";
-        // $body = "Subject: $subject\n\n$message";
-        // $result = mail($to, $subject, $body, $headers);
-
-        // Check if the email was sent successfully
-        if ($query) {
-            echo "success";
+        if($query){
+            ?>
+            <!-- SweetAlert link -->
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    swal("Success!", "Message sent successfully!", "success").then(() => {
+                        window.location.href = "contact.php";
+                    });
+                });
+            </script>
+            <?php
         } else {
-            echo "error";
+            ?>
+            <!-- SweetAlert link -->
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    swal("Oops!", "Failed to send the message. Please try again", "warning").then(() => {
+                        window.location.href = "contact.php";
+                    });
+                });
+            </script>
+            <?php
         }
-        exit;
-    } else {
-        echo "error"; // Not all required fields are set
-        exit;
     }
 }
 ?>
-
-
-
-
 <body>
-    
-
-   
-
 
     <!-- Contact Start -->
     <div class="container-xxl py-5">
@@ -139,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a> -->
 
 
     <!-- JavaScript Libraries -->
