@@ -14,7 +14,7 @@ if (!isset($_SESSION['login'])) {
 }
 
 // Define pagination variables
-$records_per_page = 10; // Number of records to display per page
+$records_per_page = 5; // Number of records to display per page
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1; // Current page number
 $offset = ($page - 1) * $records_per_page; // Calculate offset for query
 
