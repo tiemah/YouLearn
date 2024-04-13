@@ -181,7 +181,7 @@ if ($result && mysqli_num_rows($result) > 0) {
         <label for="Phone Number" class="form-label text-dark mt-3">Phone number:</label>
         <input type="tel" name="phone" class="form-control" pattern="^(07\d{8}|01\d{8}|\+2547\d{8})$" value="<?php echo $row['phone']; ?>" required>
 
-        <label for="role" class="form-check-label text-dark mt-3">Role:</label>
+        <!-- <label for="role" class="form-check-label text-dark mt-3">Role:</label> -->
         <?php
                         // Query to fetch available roles from the database
             $roles_query = "SELECT DISTINCT user_role FROM students";
@@ -192,12 +192,17 @@ if ($result && mysqli_num_rows($result) > 0) {
                 // Fetch all rows at once
                 $roles = mysqli_fetch_all($roles_result, MYSQLI_ASSOC);
             }
-            ?>
-            <select name="role">
-                <?php foreach ($roles as $role) : ?>
-                    <option value="<?php echo $role['user_role']; ?>"><?php echo $role['user_role']; ?></option>
-                <?php endforeach; ?>
-            </select><br>
+                    ?>
+                <label for="role" class="form-check-label text-dark mt-3">Role:</label>
+                    <select name="role">
+                        <?php foreach ($roles as $role) : ?>
+                            <?php if ($role['user_role'] === $row['user_role']) : ?>
+                                <option value="<?php echo $role['user_role']; ?>" selected><?php echo $role['user_role']; ?></option>
+                            <?php else : ?>
+                                <option value="<?php echo $role['user_role']; ?>"><?php echo $role['user_role']; ?></option>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </select>
 
 
 
