@@ -6,18 +6,19 @@
         <div class="container py-2">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <h4 class="text-white mb-3">Quick Links</h4>
+                    <a class="btn btn-link" href="index.php">Home</a>
                     <a class="btn btn-link" href="index.php#about">About Us</a>
-                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="contact.php">Contact Us</a>
                     <!-- <a class="btn btn-link" href="">Privacy Policy</a> -->
                     <!-- <a class="btn btn-link" href="">Terms & Condition</a> -->
-                    <a class="btn btn-link" href="">FAQs & Help</a>
+                    <!-- <a class="btn btn-link" href="">FAQs & Help</a> -->
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, Uasin Gishu, Kenya</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel: 0792899313" style="color: whitesmoke;">+254 792899313</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i><a href="mailto:doreentiema87@gmail.com" class="text-light">info@example.com</a></p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel: 0792899313" style="color: whitesmoke;">+254 792899313</a></p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i><a href="mailto:doreentiema87@gmail.com" class="text-light">doreentiema87@gmail.com</a></p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href="https://twitter.com/Dorinah17"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/_ti.em.ah_/"><i class="fab fa-instagram"></i></a>

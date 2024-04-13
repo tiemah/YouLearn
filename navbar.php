@@ -15,7 +15,7 @@
                 <a href="index.php#about" class="nav-item nav-link">About</a>
                 <a href="index.php#courses" class="nav-item nav-link">Courses</a>
                 
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="contact.php" class="nav-item nav-link">Contact</a>
             </div>
             <a href="login.php" class="btn btn-primary py-4 px-lg-5 d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
