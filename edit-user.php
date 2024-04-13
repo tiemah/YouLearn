@@ -121,6 +121,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     $firstName = $row['firstName'];
     $lastName = $row['lastName'];
     $phone = $row['phone'];
+    $user_role = $row['user_role'];
     // You can add more fields as needed
 
     // Query to fetch courses the user has registered for
@@ -133,8 +134,7 @@ if ($result && mysqli_num_rows($result) > 0) {
         $courses = mysqli_fetch_all($courses_result, MYSQLI_ASSOC);
     }
 
-    // Close the database connection
-    mysqli_close($conn);
+   
 } else {
     // Handle case when user is not found
     echo "User not found";
@@ -180,9 +180,29 @@ if ($result && mysqli_num_rows($result) > 0) {
         <label for="Phone Number" class="form-label text-dark mt-3">Phone number:</label>
         <input type="tel" name="phone" class="form-control" pattern="^(07\d{8}|01\d{8}|\+2547\d{8})$" value="<?php echo $row['phone']; ?>" required>
 
+        <label for="role" class="form-check-label text-dark mt-3">Role:</label>
+        <?php
+                        // Query to fetch available roles from the database
+            $roles_query = "SELECT DISTINCT user_role FROM students";
+            $roles_result = mysqli_query($conn, $roles_query);
+
+            // Check if the query was successful and roles exist
+            if ($roles_result && mysqli_num_rows($roles_result) > 0) {
+                // Fetch all rows at once
+                $roles = mysqli_fetch_all($roles_result, MYSQLI_ASSOC);
+            }
+            ?>
+            <select name="role">
+                <?php foreach ($roles as $role) : ?>
+                    <option value="<?php echo $role['user_role']; ?>"><?php echo $role['user_role']; ?></option>
+                <?php endforeach; ?>
+            </select><br>
+
+
+
             
             <input type="hidden" name="email" value="<?php echo $email; ?>"> <!-- Include email as hidden field -->
-            <button type="submit" class="btn btn-primary mt-4" style="border-radius:20px;" name="update">Save Changes</button>
+            <button type="submit" class="btn btn-primary mt-5" style="border-radius:20px;" name="update">Save Changes</button>
         </form>
     </div>
 
