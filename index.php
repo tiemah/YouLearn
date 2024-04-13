@@ -52,7 +52,7 @@
     <div class="container-fluid p-0 mb-5">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/carousel-1.jpg" alt="">
+                <img class="img-fluid" src="img/honey-yanibel-minaya-cruz-laORtJZaieU-unsplash.jpg" alt="">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
                     <div class="container">
                         <div class="row justify-content-start">
@@ -180,7 +180,7 @@
                         </div>
                         <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
                             <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/cat-2.jpg" alt="">
+                                <img class="img-fluid" src="img/course.jpg" alt="">
                                 <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
                                     <h5 class="m-0">Social Sciences</h5>
                                     <!-- <small class="text-primary">49 Courses</small> -->
@@ -218,79 +218,83 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Instructors</h6>
+                <h6 class="section-title bg-white text-center text-primary px-3">Core Team</h6>
                 <h1 class="mb-5">Expert Instructors</h1>
             </div>
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
+                            <img class="img-fluid" src="img/adetola-afolabi-x0A7wgQmmdk-unsplash.jpg" alt="">
                         </div>
                         <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
                             <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                <!-- <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a> -->
+                                <a class="btn btn-sm-square btn-primary mx-1" href="https://www.linkedin.com/in/doreen-tiema-46490b270/"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href="https://twitter.com/Dorinah17"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href="https://www.instagram.com/_ti.em.ah_/"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Instructor Name</h5>
-                            <small>Designation</small>
+                            <h5 class="mb-0">Prof. William Kigen</h5>
+                            <small>Head of Learning Track</small>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
+                            <img class="img-fluid" src="img/christina-wocintechchat-com-SJvDxw0azqw-unsplash.jpg" alt="">
                         </div>
                         <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
                             <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                <!-- <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a> -->
+                                <a class="btn btn-sm-square btn-primary mx-1" href="https://www.linkedin.com/in/doreen-tiema-46490b270/"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href="https://twitter.com/Dorinah17"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href="https://www.instagram.com/_ti.em.ah_/"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Instructor Name</h5>
-                            <small>Designation</small>
+                            <h5 class="mb-0">Dr.Mary Jane</h5>
+                            <small>Head of Social Sciences</small>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-3.jpg" alt="">
+                            <img class="img-fluid" src="img/microsoft-365-7mBictB_urk-unsplash.jpg" alt="">
                         </div>
                         <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
                             <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                <!-- <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a> -->
+                                <a class="btn btn-sm-square btn-primary mx-1" href="https://www.linkedin.com/in/doreen-tiema-46490b270/"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href="https://twitter.com/Dorinah17"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href="https://www.instagram.com/_ti.em.ah_/"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Instructor Name</h5>
-                            <small>Designation</small>
+                            <h5 class="mb-0">Dr. Fatima Zahur</h5>
+                            <small>Head of Engineering</small>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-4.jpg" alt="">
+                            <img class="img-fluid" src="img/iwaria-inc-K8g07Oaguqw-unsplash.jpg" alt="">
                         </div>
                         <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
                             <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                <!-- <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a> -->
+                                <a class="btn btn-sm-square btn-primary mx-1" href="https://www.linkedin.com/in/doreen-tiema-46490b270/"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href="https://twitter.com/Dorinah17"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href="https://www.instagram.com/_ti.em.ah_/"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Instructor Name</h5>
-                            <small>Designation</small>
+                            <h5 class="mb-0">Dr.Beryl Nyambego</h5>
+                            <small>Head of Education Sciences</small>
                         </div>
                     </div>
                 </div>
@@ -309,35 +313,35 @@
             </div>
             <div class="owl-carousel testimonial-carousel position-relative">
                 <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/WhatsApp Image 2024-01-22 at 07.14.46.jpeg" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Doreen Tiema</h5>
+                    <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-0">YouLearn has given me a chance to access learning materials whenever I need them.</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/iwaria-inc-K8g07Oaguqw-unsplash.jpg" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Kahi Vivian</h5>
+                    <p>Part-time student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-0">YouLearn is truly a gamechanger.It has really helped me balance my studies and work.</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img//adetola-afolabi-x0A7wgQmmdk-unsplash.jpg" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Ted Arunga</h5>
+                    <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-0">When it comes to getting quality learning materials, YouLearn is the place to go.</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/WhatsApp Image 2024-01-22 at 07.14.46.jpeg" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Sally Kiza</h5>
+                    <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-0">YouLearn has up-to-date well structured materials that nake the learning expaerience better.</p>
                     </div>
                 </div>
             </div>
