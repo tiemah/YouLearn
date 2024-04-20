@@ -10,6 +10,7 @@
 </head>
 <?php
 require_once "conn.php";
+require_once "navbar.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if all required fields are set
     if (isset($_POST['message-btn'])) {

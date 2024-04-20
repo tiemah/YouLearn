@@ -44,7 +44,7 @@
     <!-- Navbar Start -->
    <?php
     require_once "navbar.php";
-?>
+    ?>
     <!-- Navbar End -->
 
 
