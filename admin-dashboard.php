@@ -64,7 +64,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <div class="p-4">
                             <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
                             <h5 class="mb-3">Guaranteed excellence</h5>
-                            <p>YouLearn gives you, the learner, an opportunity to excell in your academics.</p>
+                            <p>YouLearn gives you, the learner,an opportunity to excell in your academics.</p>
                         </div>
                     </div>
                 </div>
