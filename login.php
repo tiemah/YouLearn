@@ -82,7 +82,7 @@ if(isset($_POST['submit'])){
                 <label for="password" class="form-label text-dark mt-3">Password:</label>
                 <input type="password" name="password" class="form-control" placeholder="e.g 12234@ke" required>
                 <input type="submit" class="btn btn-primary mt-5 mx-5" value="LOGIN" name="submit" style="border-radius: 30px;">
-                <input type="submit" class="btn btn-primary mt-5" value="RESET" style="margin-left: 200px; border-radius:30px;">
+                <input type="submit" class="btn btn-primary mt-5" value="RESET" style="margin-left: 100px; border-radius:30px;">
                 <p class="text-dark my-5">Not registered? <a href="register.php">Register Today</a></p>    
             </form>
         </div>
