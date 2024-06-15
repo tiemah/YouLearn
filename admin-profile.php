@@ -48,7 +48,7 @@
                             <script>
                                 document.addEventListener('DOMContentLoaded', function() {
                                     swal("Good job!", "Profile updated successfully!", "success").then(() => {
-                                        window.location.href = "profile.php"; // Redirect to add-course page after displaying sweet alert
+                                        window.location.href = "admin-profile.php"; // Redirect to add-course page after displaying sweet alert
                                     });
                                 });
                             </script>
