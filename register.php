@@ -17,10 +17,6 @@ if(isset($_SESSION['login'])){
     <meta content="" name="keywords">
     <meta content="" name="description">
 
-    
-
-    
-
 </head>
 <body>
     <?php
