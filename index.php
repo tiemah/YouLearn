@@ -160,7 +160,7 @@
 
 
     <!-- Categories Start -->
-    <div class="container-xxl py-5 category">
+    <div class="container-xxl py-5 category" id="courses">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Categories</h6>
@@ -191,7 +191,7 @@
                             <a class="position-relative d-block overflow-hidden" href="">
                                 <img class="img-fluid" src="img/cat-3.jpg" alt="">
                                 <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                    <h5 class="m-0">Education Science</h5>
+                                    <h5 class="m-0">Psychology</h5>
                                     <!-- <small class="text-primary">49 Courses</small> -->
                                 </div>
                             </a>
@@ -202,7 +202,7 @@
                     <a class="position-relative d-block h-100 overflow-hidden" href="">
                         <img class="img-fluid position-absolute w-100 h-100" src="img/cat-4.jpg" alt="" style="object-fit: cover;">
                         <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
-                            <h5 class="m-0">Business and Administration</h5>
+                            <h5 class="m-0">Computer Science</h5>
                             <!-- <small class="text-primary">49 Courses</small> -->
                         </div>
                     </a>

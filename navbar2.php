@@ -13,8 +13,8 @@
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.php" class="nav-item nav-link active">Home</a>
                 <a href="./index.php#about" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>                  
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="index.php#courses" class="nav-item nav-link">Courses</a>                  
+                <a href="contact.php" class="nav-item nav-link">Contact</a>
             </div>
             <a href="logout.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Logout<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
