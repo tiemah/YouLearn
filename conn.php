@@ -1,9 +1,9 @@
 <?php
 
     define("HOST", "localhost");
-    define("USERNAME","root");
+    define("USERNAME","");
     define("PASSWORD","");
-    define("DATABASE","school");
+    define("DATABASE","");
 
     $conn = mysqli_connect(HOST,USERNAME,PASSWORD,DATABASE);
 
